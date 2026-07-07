@@ -289,7 +289,7 @@ export default function HomePage() {
             </div>
           </div>
         </ScrollSection>  */}
-
+{/* 
         <ScrollSection className="section">
           <div className="container story-grid">
             <Reveal>
@@ -313,9 +313,9 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-        </ScrollSection>
+        </ScrollSection> */}
 
-        <ScrollSection className="section section--warm">
+        {/* <ScrollSection className="section section--warm">
           <div className="container message-card">
             <Reveal className="message-card__media" direction="left">
               <Image
@@ -332,7 +332,7 @@ export default function HomePage() {
               <p className="message-card__signature">Recruiting Team / COSMO GROUP</p>
             </Reveal>
           </div>
-        </ScrollSection>
+        </ScrollSection> */}
 
         <ScrollSection className="section section--dark" id="recruit">
           <Reveal className="container recruit-banner" direction="down">
