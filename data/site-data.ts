@@ -47,7 +47,7 @@ export type Interview = {
 
 export const navItems = [
   { label: { jp: "会社を知る", en: "ABOUT" }, href: "#about" },
-  { label: { jp: "事業を知る", en: "COMPANY" }, href: "#company" },
+  { label: { jp: "コスモグループについて", en: "COSMO GROUP" }, href: "#company" },
   { label: { jp: "仕事を知る", en: "WORK" }, href: "#work" },
   { label: { jp: "人を知る", en: "PEOPLE" }, href: "#people" },
   { label: { jp: "環境を知る", en: "CULTURE" }, href: "#culture" },
@@ -153,12 +153,16 @@ export const homeText = {
     }
   ],
   companyTitle: {
-    jp: "3つの会社、3つの方法で美容を支える。",
-    en: "Three companies, three ways to support beauty."
+    jp: "コスモグループについて",
+    en: "About Cosmo Group"
+  },
+  companyLead: {
+    jp: "コスモグループは、美容と健康の未来を見据え、複数の専門領域が連携することで価値を生み出す企業グループです。",
+    en: "Cosmo Group creates value through a coordinated network of specialized businesses, each looking toward the future of beauty and health."
   },
   companyBody: {
-    jp: "同じグループでも、向き合う相手も、仕事の手触りも違います。だからこそ、自分に合う挑戦を選べます。",
-    en: "Even within one group, the audience, tempo, and craft of the work are different. That is what makes it possible to choose the challenge that fits you."
+    jp: "美容・健康領域を支えるグループネットワーク",
+    en: "A group network supporting the beauty and health fields."
   },
   fitTitle: {
     jp: "自分に合う会社を、感覚ではなく言葉で選ぶ。",
@@ -224,6 +228,52 @@ export const homeText = {
     jp: "会社の違い、必要経験、選考の流れなど、候補者が迷いやすいポイントを整理しています。",
     en: "We organize the questions candidates most often hesitate over, from company differences to experience requirements and selection flow."
   }
+} as const;
+
+export const groupNetwork = {
+  center: {
+    icon: "/assets/network-icon-holding.png",
+    // icon: "/assets/cosmo-logo.png",
+    name: { jp: "コスモホールディングス", en: "Cosmo Holdings" },
+    body: { jp: "グループ統括", en: "Parent company / holding company" }
+  },
+  nodes: [
+    {
+      id: "cosmo",
+      position: "top-left",
+      icon: "/assets/network-icon-box.png",
+      name: { jp: "株式会社コスモ", en: "Cosmo Co., Ltd." },
+      body: { jp: "美容ディーラー事業", en: "Beauty product distribution business" }
+    },
+    {
+      id: "holistic-cubes",
+      position: "bottom-left",
+      icon: "/assets/network-icon-device.png",
+      name: { jp: "ポリスティックキューブス", en: "Polistic Cubes" },
+      body: { jp: "美容機器ブランド事業", en: "Beauty device brand business" }
+    },
+    {
+      id: "reiso",
+      position: "top-right",
+      icon: "/assets/network-icon-lab.png",
+      name: { jp: "株式会社レイソ", en: "Reiso Co., Ltd." },
+      body: { jp: "美容機器メーカー事業", en: "Beauty device manufacturing business" }
+    },
+    {
+      id: "group-related",
+      position: "middle-right",
+      icon: "/assets/network-icon-people.png",
+      name: { jp: "グループ会社", en: "Group Company" },
+      body: { jp: "関連事業", en: "Related business" }
+    },
+    {
+      id: "group-other",
+      position: "bottom-center",
+      icon: "/assets/network-icon-care.png",
+      name: { jp: "グループ会社", en: "Group Company" },
+      body: { jp: "関連事業", en: "Related business" }
+    }
+  ]
 } as const;
 
 export const companies: Company[] = [
@@ -471,28 +521,64 @@ export const interviews: Interview[] = [
   }
 ];
 
-export const metrics = [
-  {
-    value: 3,
-    suffix: "+",
-    label: { jp: "グループ会社数", en: "Group Companies" }
+export const dataMetrics = {
+  growth: {
+    label: { jp: "社員増加率", en: "Employee Growth" },
+    value: 1.7,
+    suffix: "x",
+    note: { jp: "2015年〜2020年", en: "2015-2020" }
   },
-  {
-    value: 71,
-    suffix: "",
-    label: { jp: "社員数", en: "Employees" }
+  gender: {
+    label: { jp: "男女比率", en: "Gender Ratio" },
+    items: [
+      { label: { jp: "女性", en: "Women" }, value: 28.4, tone: "warm" },
+      { label: { jp: "男性", en: "Men" }, value: 71.6, tone: "cool" }
+    ]
   },
-  {
-    value: 20,
-    suffix: "+",
-    label: { jp: "年間中途採用数", en: "Mid-career Hires / year" }
+  roles: {
+    label: { jp: "コスモの職種別割合", en: "Cosmo Role Breakdown" },
+    items: [
+      { label: { jp: "営業", en: "Sales" }, value: 63, icon: "runner" },
+      { label: { jp: "企画", en: "Planning" }, value: 7.4, icon: "presentation" },
+      { label: { jp: "インストラクター", en: "Instructor" }, value: 2.4, icon: "instructor" },
+      { label: { jp: "流通", en: "Distribution" }, value: 6.2, icon: "pin" },
+      { label: { jp: "業務", en: "Operations" }, value: 13.6, icon: "desk" },
+      { label: { jp: "マーケ", en: "Marketing" }, value: 3.7, icon: "idea" },
+      { label: { jp: "経理", en: "Accounting" }, value: 3.7, icon: "accounting" }
+    ]
   },
-  {
-    value: 2017,
-    suffix: "",
-    label: { jp: "設立", en: "Founded" }
+  marriage: {
+    label: { jp: "既婚者率", en: "Married Employees" },
+    value: 60.6,
+    suffix: "%"
+  },
+  parentalLeave: {
+    label: { jp: "育休から復帰率", en: "Return From Parental Leave" },
+    value: 100,
+    suffix: "%"
+  },
+  benefits: {
+    label: { jp: "福利厚生各種", en: "Benefits" },
+    items: [
+      { label: { jp: "業務手当", en: "Work Allowance" }, icon: "briefcase" },
+      { label: { jp: "地域手当", en: "Area Allowance" }, icon: "location" },
+      { label: { jp: "住宅手当", en: "Housing Allowance" }, icon: "home" }
+    ]
+  },
+  awards: {
+    label: { jp: "年間表彰コンテスト", en: "Annual Awards Contest" },
+    body: {
+      jp: "成果を讃え、挑戦を称える文化。年に一度、輝く仲間を表彰します。",
+      en: "A culture that celebrates results and honors challenges. Once a year, we recognize teammates who shine."
+    },
+    items: [
+      { label: { jp: "No.1", en: "No.1" }, body: { jp: "私がNo.1だっ!", en: "I am No.1!" }, icon: "crown" },
+      { label: { jp: "いいえ、私よっ!", en: "No, it is me!" }, body: { jp: "いいえ、私よっ!", en: "No, it is me!" }, icon: "heart" },
+      { label: { jp: "いや、俺だっ!", en: "No, it is me!" }, body: { jp: "いや、俺だっ!", en: "No, it is me!" }, icon: "star" },
+      { label: { jp: "結局、誰よ…", en: "So, who is it?" }, body: { jp: "結局、誰よ…", en: "So, who is it?" }, icon: "medal" }
+    ]
   }
-];
+} as const;
 
 export const faqs = [
   {

@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 
 import { CompanyFit } from "@/components/CompanyFit";
 import { FaqAccordion } from "@/components/FaqAccordion";
@@ -19,6 +18,7 @@ import { SectionIntro } from "@/components/ui/SectionIntro";
 import {
   companies,
   culturePillars,
+  groupNetwork,
   homeText,
   interviews,
   jobs,
@@ -93,47 +93,61 @@ export default function HomePage() {
           </div>
         </ScrollSection>
 
-        <ScrollSection className="section section--dark" id="company">
-          <div className="container">
-            <Reveal direction="left">
-              <SectionIntro
-                label="COMPANY"
-                title={t(homeText.companyTitle)}
-                body={t(homeText.companyBody)}
-              />
+        <ScrollSection className="section section--dark section--network" id="company">
+          <div className="container company-network">
+            <Reveal direction="down" className="company-network__heading">
+              <p className="eyebrow">COSMO GROUP</p>
+              <h2>{t(homeText.companyTitle)}</h2>
+              <p>{t(homeText.companyLead)}</p>
+              <span aria-hidden="true" className="company-network__heading-line" />
             </Reveal>
-            <div className="company-grid">
-              {companies.map((company, index) => (
-                <Reveal
-                  key={company.slug}
-                  delay={index * 0.08}
-                  direction={index % 2 === 0 ? "left" : "right"}
-                  className="company-card"
+            <Reveal delay={0.08} direction="up" className="company-network__map">
+              <svg
+                aria-hidden="true"
+                className="company-network__links"
+                preserveAspectRatio="none"
+                viewBox="0 0 1240 680"
+              >
+                <line x1="620" x2="202" y1="340" y2="154" />
+                <line x1="620" x2="202" y1="340" y2="428" />
+                <line x1="620" x2="1038" y1="340" y2="154" />
+                <line x1="620" x2="1038" y1="340" y2="428" />
+                <line x1="620" x2="620" y1="340" y2="584" />
+              </svg>
+              <div className="company-network__center">
+                <div className="company-network__icon company-network__icon--center">
+                  <Image
+                    src={groupNetwork.center.icon}
+                    alt=""
+                    width={144}
+                    height={144}
+                    sizes="144px"
+                  />
+                </div>
+                <h3>{t(groupNetwork.center.name)}</h3>
+                <p>{t(groupNetwork.center.body)}</p>
+              </div>
+              {groupNetwork.nodes.map((node) => (
+                <div
+                  key={node.id}
+                  className={`company-network__node company-network__node--${node.position}`}
                 >
-                  <div className="company-card__media">
-                    <Image
-                      src={company.image}
-                      alt={company.name}
-                      fill
-                      sizes="(max-width: 900px) 100vw, 33vw"
-                    />
+                  <div className="company-network__icon">
+                    <Image src={node.icon} alt="" width={96} height={96} sizes="96px" />
                   </div>
-                  <div
-                    className="company-card__content"
-                    style={{ boxShadow: `inset 0 1px 0 ${company.accent}` }}
-                  >
-                    <p className="eyebrow">{company.englishTag}</p>
-                    <h3>{company.name}</h3>
-                    <p>{t(company.summary)}</p>
-                    <div className="company-card__fit">{t(company.fit)}</div>
-                    <Link href={`/companies/${company.slug}`}>{t(uiText.common.detail)}</Link>
+                  <div>
+                    <h3>{t(node.name)}</h3>
+                    <p>{t(node.body)}</p>
                   </div>
-                </Reveal>
+                </div>
               ))}
-            </div>
+            </Reveal>
+            <Reveal delay={0.16} direction="up" className="company-network__caption">
+              <p>{t(homeText.companyBody)}</p>
+            </Reveal>
           </div>
         </ScrollSection>
-
+{/* 
         <ScrollSection className="section">
           <div className="container">
             <Reveal direction="right">
@@ -147,46 +161,9 @@ export default function HomePage() {
               <CompanyFit />
             </Reveal>
           </div>
-        </ScrollSection>
+        </ScrollSection>*/}
 
-        <ScrollSection className="section section--warm" id="work">
-          <div className="container">
-            <Reveal direction="down">
-              <SectionIntro
-                label="WORK"
-                title={t(homeText.workTitle)}
-                body={t(homeText.workBody)}
-              />
-            </Reveal>
-            <div className="job-list">
-              {jobs.map((job, index) => {
-                const company = companies.find((item) => item.slug === job.company);
-                return (
-                  <Reveal
-                    key={job.id}
-                    delay={index * 0.06}
-                    direction={index % 2 === 0 ? "left" : "right"}
-                    className="job-card"
-                  >
-                    <div className="job-card__meta">
-                      <span style={{ color: company?.accent }}>{company?.name}</span>
-                      <span>{t(job.location)}</span>
-                      <span>{t(job.type)}</span>
-                    </div>
-                    <h3>{t(job.title)}</h3>
-                    <p>{t(job.mission)}</p>
-                    <ul>
-                      {job.tasks.map((task, taskIndex) => (
-                        <li key={`${job.id}-task-${taskIndex}`}>{t(task)}</li>
-                      ))}
-                    </ul>
-                    <div className="job-card__fit">{t(job.fit)}</div>
-                  </Reveal>
-                );
-              })}
-            </div>
-          </div>
-        </ScrollSection>
+
 
         <ScrollSection className="section" id="people">
           <div className="container">
@@ -273,6 +250,45 @@ export default function HomePage() {
             </Reveal>
           </div>
         </ScrollSection>
+{/* 
+        <ScrollSection className="section section--warm" id="work">
+          <div className="container">
+            <Reveal direction="down">
+              <SectionIntro
+                label="WORK"
+                title={t(homeText.workTitle)}
+                body={t(homeText.workBody)}
+              />
+            </Reveal>
+            <div className="job-list">
+              {jobs.map((job, index) => {
+                const company = companies.find((item) => item.slug === job.company);
+                return (
+                  <Reveal
+                    key={job.id}
+                    delay={index * 0.06}
+                    direction={index % 2 === 0 ? "left" : "right"}
+                    className="job-card"
+                  >
+                    <div className="job-card__meta">
+                      <span style={{ color: company?.accent }}>{company?.name}</span>
+                      <span>{t(job.location)}</span>
+                      <span>{t(job.type)}</span>
+                    </div>
+                    <h3>{t(job.title)}</h3>
+                    <p>{t(job.mission)}</p>
+                    <ul>
+                      {job.tasks.map((task, taskIndex) => (
+                        <li key={`${job.id}-task-${taskIndex}`}>{t(task)}</li>
+                      ))}
+                    </ul>
+                    <div className="job-card__fit">{t(job.fit)}</div>
+                  </Reveal>
+                );
+              })}
+            </div>
+          </div>
+        </ScrollSection>  */}
 
         <ScrollSection className="section">
           <div className="container story-grid">

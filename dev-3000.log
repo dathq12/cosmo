@@ -1,0 +1,558 @@
+
+> cosmo-group-recruiting@0.1.0 dev
+> next dev -p 3000
+
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 2.1s
+ ○ Compiling / ...
+ ✓ Compiled / in 5.2s (1274 modules)
+ GET / 200 in 5576ms
+ GET / 200 in 96ms
+ GET / 200 in 117ms
+ GET / 200 in 57ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 570ms (1277 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 732ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 45ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 72ms
+ GET / 200 in 167ms
+ GET / 200 in 60ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 55ms
+ ✓ Compiled in 461ms (1277 modules)
+ ✓ Compiled in 350ms (1275 modules)
+ GET / 200 in 264ms
+ ✓ Compiled /_not-found in 163ms (636 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 316ms
+ ✓ Compiled in 361ms (1277 modules)
+ GET / 200 in 171ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 31ms
+ ✓ Compiled in 287ms (1277 modules)
+ GET / 200 in 112ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 81ms
+ ✓ Compiled in 221ms (1277 modules)
+ ✓ Compiled in 656ms (1289 modules)
+ ✓ Compiled in 423ms (1289 modules)
+ ✓ Compiled in 290ms (1289 modules)
+ ✓ Compiled in 160ms (1289 modules)
+ ✓ Compiled in 225ms (1289 modules)
+ ✓ Compiled in 550ms (1275 modules)
+ GET / 200 in 156ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 660ms (636 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 804ms
+ ○ Compiling /jobs ...
+ ✓ Compiled /jobs in 655ms (1285 modules)
+ GET /jobs 200 in 804ms
+ GET /jobs 200 in 40ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 88ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 63ms
+ ✓ Compiled in 695ms (1283 modules)
+ ✓ Compiled in 364ms (1297 modules)
+ ✓ Compiled in 366ms (1297 modules)
+ GET /jobs 200 in 184ms
+ GET /jobs 200 in 55ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 1074ms (641 modules)
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at Object.__webpack_require__ [as require] (D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js:33:42)
+digest: "357874603"
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at Object.__webpack_require__ [as require] (D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js:33:42)
+digest: "357874603"
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at Object.__webpack_require__ [as require] (D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js:33:42)
+digest: "3653040832"
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at Object.__webpack_require__ [as require] (D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js:33:42)
+digest: "357874603"
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at Object.__webpack_require__ [as require] (D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js:33:42)
+digest: "357874603"
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at Object.__webpack_require__ [as require] (D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js:33:42)
+digest: "357874603"
+TypeError: __webpack_modules__[moduleId] is not a function
+    at Object.__webpack_require__ [as require] (D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js:33:42)
+    at require (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:40:20064)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108376
+    at ea (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108583)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:110813
+    at Object._fromJSON (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:111370)
+    at JSON.parse (<anonymous>)
+    at ec (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:109078)
+    at eo (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108123)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115291
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115308
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115341
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115358
+    at t (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115581)
+    at runNextTicks (node:internal/process/task_queues:64:5)
+    at listOnTimeout (node:internal/timers:547:9)
+    at process.processTimers (node:internal/timers:521:7)
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at Object.__webpack_require__ [as require] (D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js:33:42)
+    at require (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:40:20064)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108376
+    at ea (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108583)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:110813
+    at Object._fromJSON (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:111370)
+    at JSON.parse (<anonymous>)
+    at ec (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:109078)
+    at eo (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108123)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115291
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115308
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115341
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115358
+    at t (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115581)
+    at runNextTicks (node:internal/process/task_queues:64:5)
+    at listOnTimeout (node:internal/timers:547:9)
+    at process.processTimers (node:internal/timers:521:7)
+TypeError: __webpack_modules__[moduleId] is not a function
+    at Object.__webpack_require__ [as require] (D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js:33:42)
+    at require (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:40:20064)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108376
+    at ea (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108583)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:110813
+    at Object._fromJSON (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:111370)
+    at JSON.parse (<anonymous>)
+    at ec (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:109078)
+    at eo (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108123)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115291
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115308
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115341
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115358
+    at t (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115581)
+    at runNextTicks (node:internal/process/task_queues:64:5)
+    at listOnTimeout (node:internal/timers:547:9)
+    at process.processTimers (node:internal/timers:521:7)
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at Object.__webpack_require__ [as require] (D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js:33:42)
+    at require (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:40:20064)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108376
+    at ea (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108583)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:110813
+    at Object._fromJSON (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:111370)
+    at JSON.parse (<anonymous>)
+    at ec (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:109078)
+    at eo (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108123)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115291
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115308
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115341
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115358
+    at t (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115581)
+    at runNextTicks (node:internal/process/task_queues:64:5)
+    at listOnTimeout (node:internal/timers:547:9)
+    at process.processTimers (node:internal/timers:521:7)
+TypeError: __webpack_modules__[moduleId] is not a function
+    at Object.__webpack_require__ [as require] (D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js:33:42)
+    at require (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:40:20064)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108376
+    at ea (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108583)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:110813
+    at Object._fromJSON (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:111370)
+    at JSON.parse (<anonymous>)
+    at ec (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:109078)
+    at eo (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108123)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115291
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115308
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115341
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115358
+    at t (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115581)
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at Object.__webpack_require__ [as require] (D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js:33:42)
+    at require (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:40:20064)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108376
+    at ea (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108583)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:110813
+    at Object._fromJSON (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:111370)
+    at JSON.parse (<anonymous>)
+    at ec (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:109078)
+    at eo (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108123)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115291
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115308
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115341
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115358
+    at t (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115581)
+TypeError: __webpack_modules__[moduleId] is not a function
+    at Object.__webpack_require__ [as require] (D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js:33:42)
+    at require (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:40:20064)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108376
+    at ea (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108583)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:110813
+    at Object._fromJSON (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:111370)
+    at JSON.parse (<anonymous>)
+    at ec (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:109078)
+    at eo (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108123)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115291
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115308
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115341
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115358
+    at t (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115581)
+    at runNextTicks (node:internal/process/task_queues:64:5)
+    at listOnTimeout (node:internal/timers:547:9)
+    at process.processTimers (node:internal/timers:521:7)
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at Object.__webpack_require__ [as require] (D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js:33:42)
+    at require (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:40:20064)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108376
+    at ea (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108583)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:110813
+    at Object._fromJSON (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:111370)
+    at JSON.parse (<anonymous>)
+    at ec (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:109078)
+    at eo (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108123)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115291
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115308
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115341
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115358
+    at t (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115581)
+    at runNextTicks (node:internal/process/task_queues:64:5)
+    at listOnTimeout (node:internal/timers:547:9)
+    at process.processTimers (node:internal/timers:521:7)
+TypeError: __webpack_modules__[moduleId] is not a function
+    at Object.__webpack_require__ [as require] (D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js:33:42)
+    at require (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:40:20064)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108376
+    at ea (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108583)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:110813
+    at Object._fromJSON (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:111370)
+    at JSON.parse (<anonymous>)
+    at ec (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:109078)
+    at eo (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108123)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115291
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115308
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115341
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115358
+    at t (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115581)
+    at runNextTicks (node:internal/process/task_queues:64:5)
+    at listOnTimeout (node:internal/timers:547:9)
+    at process.processTimers (node:internal/timers:521:7)
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at Object.__webpack_require__ [as require] (D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js:33:42)
+    at require (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:40:20064)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108376
+    at ea (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108583)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:110813
+    at Object._fromJSON (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:111370)
+    at JSON.parse (<anonymous>)
+    at ec (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:109078)
+    at eo (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108123)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115291
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115308
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115341
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115358
+    at t (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115581)
+    at runNextTicks (node:internal/process/task_queues:64:5)
+    at listOnTimeout (node:internal/timers:547:9)
+    at process.processTimers (node:internal/timers:521:7)
+TypeError: __webpack_modules__[moduleId] is not a function
+    at Object.__webpack_require__ [as require] (D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js:33:42)
+    at require (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:40:20064)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108376
+    at ea (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108583)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:110813
+    at Object._fromJSON (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:111370)
+    at JSON.parse (<anonymous>)
+    at ec (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:109078)
+    at eo (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108123)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115291
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115308
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115341
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115358
+    at t (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115581)
+    at runNextTicks (node:internal/process/task_queues:64:5)
+    at listOnTimeout (node:internal/timers:547:9)
+    at process.processTimers (node:internal/timers:521:7)
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at Object.__webpack_require__ [as require] (D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js:33:42)
+    at require (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:40:20064)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108376
+    at ea (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108583)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:110813
+    at Object._fromJSON (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:111370)
+    at JSON.parse (<anonymous>)
+    at ec (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:109078)
+    at eo (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:108123)
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115291
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115308
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115341
+    at D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115358
+    at t (D:\Desktop\Cosmo-final\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:35:115581)
+    at runNextTicks (node:internal/process/task_queues:64:5)
+    at listOnTimeout (node:internal/timers:547:9)
+    at process.processTimers (node:internal/timers:521:7)
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 687ms (1512 modules)
+ GET /_next/static/chunks/app-pages-internals.js 500 in 7417ms
+ GET /_next/static/chunks/webpack.js?v=1783417051678 500 in 7425ms
+ GET /_next/static/chunks/main-app.js?v=1783417051678 500 in 7420ms
+ GET /_next/static/css/app/layout.css?v=1783417051678 500 in 7463ms
+ GET /_next/static/chunks/app/layout.js 500 in 7415ms
+ GET /_next/static/chunks/app/jobs/page.js 500 in 7417ms
+ GET /_next/static/chunks/app/not-found.js 404 in 181ms
+ GET /_next/static/css/app/layout.css?v=1783417059588 404 in 98ms
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat 'D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-utils.js'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/motion-utils' in D:\Desktop\Cosmo-final\.next\server for build dependencies doesn't lead to expected result 'D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-utils.js', but to 'Error: Can't resolve './vendor-chunks/motion-utils' in 'D:\Desktop\Cosmo-final\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/motion-utils (expected D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-utils.js)
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at resolve commonjs D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/motion-dom' in D:\Desktop\Cosmo-final\.next\server for build dependencies doesn't lead to expected result 'D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-dom.js', but to 'Error: Can't resolve './vendor-chunks/motion-dom' in 'D:\Desktop\Cosmo-final\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/motion-dom (expected D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-dom.js)
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at resolve commonjs D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat 'D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-utils.js'
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat 'D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-utils.js'
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat 'D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-utils.js'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/motion-utils' in D:\Desktop\Cosmo-final\.next\server for build dependencies doesn't lead to expected result 'D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-utils.js', but to 'Error: Can't resolve './vendor-chunks/motion-utils' in 'D:\Desktop\Cosmo-final\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/motion-utils (expected D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-utils.js)
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at resolve commonjs D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/motion-utils' in D:\Desktop\Cosmo-final\.next\server for build dependencies doesn't lead to expected result 'D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-utils.js', but to 'Error: Can't resolve './vendor-chunks/motion-utils' in 'D:\Desktop\Cosmo-final\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/motion-utils (expected D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-utils.js)
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at resolve commonjs D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/motion-dom' in D:\Desktop\Cosmo-final\.next\server for build dependencies doesn't lead to expected result 'D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-dom.js', but to 'Error: Can't resolve './vendor-chunks/motion-dom' in 'D:\Desktop\Cosmo-final\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/motion-dom (expected D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-dom.js)
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at resolve commonjs D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/motion-dom' in D:\Desktop\Cosmo-final\.next\server for build dependencies doesn't lead to expected result 'D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-dom.js', but to 'Error: Can't resolve './vendor-chunks/motion-dom' in 'D:\Desktop\Cosmo-final\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/motion-dom (expected D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-dom.js)
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at resolve commonjs D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/motion-utils' in D:\Desktop\Cosmo-final\.next\server for build dependencies doesn't lead to expected result 'D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-utils.js', but to 'Error: Can't resolve './vendor-chunks/motion-utils' in 'D:\Desktop\Cosmo-final\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/motion-utils (expected D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-utils.js)
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at resolve commonjs D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/framer-motion' in D:\Desktop\Cosmo-final\.next\server for build dependencies doesn't lead to expected result 'D:\Desktop\Cosmo-final\.next\server\vendor-chunks\framer-motion.js', but to 'Error: Can't resolve './vendor-chunks/framer-motion' in 'D:\Desktop\Cosmo-final\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/framer-motion (expected D:\Desktop\Cosmo-final\.next\server\vendor-chunks\framer-motion.js)
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at resolve commonjs D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/motion-dom' in D:\Desktop\Cosmo-final\.next\server for build dependencies doesn't lead to expected result 'D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-dom.js', but to 'Error: Can't resolve './vendor-chunks/motion-dom' in 'D:\Desktop\Cosmo-final\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/motion-dom (expected D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-dom.js)
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at resolve commonjs D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/framer-motion' in D:\Desktop\Cosmo-final\.next\server for build dependencies doesn't lead to expected result 'D:\Desktop\Cosmo-final\.next\server\vendor-chunks\framer-motion.js', but to 'Error: Can't resolve './vendor-chunks/framer-motion' in 'D:\Desktop\Cosmo-final\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/framer-motion (expected D:\Desktop\Cosmo-final\.next\server\vendor-chunks\framer-motion.js)
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at resolve commonjs D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat 'D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-utils.js'
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat 'D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-utils.js'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/motion-utils' in D:\Desktop\Cosmo-final\.next\server for build dependencies doesn't lead to expected result 'D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-utils.js', but to 'Error: Can't resolve './vendor-chunks/motion-utils' in 'D:\Desktop\Cosmo-final\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/motion-utils (expected D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-utils.js)
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at resolve commonjs D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/motion-dom' in D:\Desktop\Cosmo-final\.next\server for build dependencies doesn't lead to expected result 'D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-dom.js', but to 'Error: Can't resolve './vendor-chunks/motion-dom' in 'D:\Desktop\Cosmo-final\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/motion-dom (expected D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-dom.js)
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at resolve commonjs D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/motion-utils' in D:\Desktop\Cosmo-final\.next\server for build dependencies doesn't lead to expected result 'D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-utils.js', but to 'Error: Can't resolve './vendor-chunks/motion-utils' in 'D:\Desktop\Cosmo-final\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/motion-utils (expected D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-utils.js)
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at resolve commonjs D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/motion-dom' in D:\Desktop\Cosmo-final\.next\server for build dependencies doesn't lead to expected result 'D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-dom.js', but to 'Error: Can't resolve './vendor-chunks/motion-dom' in 'D:\Desktop\Cosmo-final\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/motion-dom (expected D:\Desktop\Cosmo-final\.next\server\vendor-chunks\motion-dom.js)
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at resolve commonjs D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/framer-motion' in D:\Desktop\Cosmo-final\.next\server for build dependencies doesn't lead to expected result 'D:\Desktop\Cosmo-final\.next\server\vendor-chunks\framer-motion.js', but to 'Error: Can't resolve './vendor-chunks/framer-motion' in 'D:\Desktop\Cosmo-final\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/framer-motion (expected D:\Desktop\Cosmo-final\.next\server\vendor-chunks\framer-motion.js)
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\webpack-runtime.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file D:\Desktop\Cosmo-final\.next\server\app\_not-found\page.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\require.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\utils.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\handle-externals.js
+<w>  at file dependencies D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at file D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+<w>  at resolve commonjs D:\Desktop\Cosmo-final\node_modules\next\dist\build\webpack\loaders\next-swc-loader.js
+[?25h

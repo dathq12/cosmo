@@ -15,8 +15,16 @@ export default function JobsPage() {
     <>
       <Header />
       <main className="subpage-main">
-        <section className="subpage-hero">
-          <div className="container">
+        <section className="subpage-hero subpage-hero--jobs">
+          <div className="jobs-hero__backdrop" aria-hidden="true">
+            <div className="jobs-hero__image jobs-hero__image--team" />
+            <div className="jobs-hero__image jobs-hero__image--engineer" />
+            <div className="jobs-hero__image jobs-hero__image--lab" />
+            <div className="jobs-hero__glow jobs-hero__glow--warm" />
+            <div className="jobs-hero__glow jobs-hero__glow--cool" />
+          </div>
+          <div className="jobs-hero__overlay" aria-hidden="true" />
+          <div className="container jobs-hero__content">
             <p className="eyebrow">RECRUIT</p>
             <h1>{t(uiText.jobsPage.heroTitle)}</h1>
             <p>{t(uiText.jobsPage.heroBody)}</p>
