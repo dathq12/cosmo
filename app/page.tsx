@@ -202,6 +202,21 @@ export default function HomePage() {
           </div>
         </ScrollSection>
 
+        <ScrollSection className="section section--dark" id="data">
+          <div className="container">
+            <Reveal direction="down">
+              <SectionIntro
+                label="DATA"
+                title={t(homeText.dataTitle)}
+                body={t(homeText.dataBody)}
+              />
+            </Reveal>
+            <Reveal delay={0.08} direction="up">
+              <StatsGrid />
+            </Reveal>
+          </div>
+        </ScrollSection>
+
         <ScrollSection className="section section--warm" id="culture">
           <div className="container">
             <Reveal direction="right">
@@ -237,20 +252,7 @@ export default function HomePage() {
           </div>
         </ScrollSection>
 
-        <ScrollSection className="section section--dark" id="data">
-          <div className="container">
-            <Reveal direction="down">
-              <SectionIntro
-                label="DATA"
-                title={t(homeText.dataTitle)}
-                body={t(homeText.dataBody)}
-              />
-            </Reveal>
-            <Reveal delay={0.08} direction="up">
-              <StatsGrid />
-            </Reveal>
-          </div>
-        </ScrollSection>
+
 {/* 
         <ScrollSection className="section section--warm" id="work">
           <div className="container">
