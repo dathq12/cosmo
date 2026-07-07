@@ -1646,6 +1646,11 @@ img {
   gap: 24px;
 }
 
+.recruit-panel {
+  display: grid;
+  gap: 34px;
+}
+
 .recruit-banner h2 {
   margin: 0 0 18px;
   font-size: clamp(2rem, 4vw, 3.3rem);
@@ -1657,6 +1662,107 @@ img {
   max-width: 640px;
   color: rgba(246, 239, 230, 0.72);
   line-height: 1.8;
+}
+
+.recruit-featured-jobs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.recruit-job-card {
+  position: relative;
+  min-height: 260px;
+  overflow: hidden;
+  padding: 28px;
+  border: 1px solid rgba(255, 231, 202, 0.16);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 88% 14%, rgba(185, 154, 91, 0.18), transparent 28%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.025)),
+    rgba(255, 255, 255, 0.035);
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.recruit-job-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.09), transparent 34%),
+    radial-gradient(circle at 8% 100%, rgba(255, 231, 202, 0.1), transparent 34%);
+  pointer-events: none;
+}
+
+.recruit-job-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.recruit-job-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  margin-bottom: 18px;
+  color: rgba(246, 239, 230, 0.64);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.recruit-job-card h3 {
+  max-width: 82%;
+  margin: 0 0 14px;
+  color: rgba(255, 245, 229, 0.96);
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  line-height: 1.35;
+}
+
+.recruit-job-card p {
+  max-width: 92%;
+  margin: 0;
+  color: rgba(246, 239, 230, 0.72);
+  line-height: 1.8;
+}
+
+.recruit-job-card ul {
+  display: grid;
+  gap: 10px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.recruit-job-card li {
+  position: relative;
+  padding-left: 18px;
+  color: rgba(246, 239, 230, 0.76);
+  line-height: 1.7;
+}
+
+.recruit-job-card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.recruit-job-card__index {
+  position: absolute;
+  right: 24px;
+  bottom: 18px;
+  z-index: 0;
+  color: rgba(255, 255, 255, 0.08);
+  font-family: var(--font-display), serif;
+  font-size: clamp(4rem, 8vw, 7rem);
+  line-height: 1;
 }
 
 .faq-list {
@@ -2023,6 +2129,15 @@ img {
   .company-hero__grid,
   .company-detail-grid,
   .recruit-banner {
+    grid-template-columns: 1fr;
+  }
+
+  .recruit-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .recruit-featured-jobs {
     grid-template-columns: 1fr;
   }
 

@@ -48,7 +48,7 @@ export type Interview = {
 export const navItems = [
   { label: { jp: "会社を知る", en: "ABOUT" }, href: "#about" },
   { label: { jp: "コスモグループについて", en: "COSMO GROUP" }, href: "#company" },
-  { label: { jp: "仕事を知る", en: "WORK" }, href: "#work" },
+  // { label: { jp: "仕事を知る", en: "WORK" }, href: "#work" },
   { label: { jp: "人を知る", en: "PEOPLE" }, href: "#people" },
   { label: { jp: "環境を知る", en: "CULTURE" }, href: "#culture" },
   { label: { jp: "数字で見る", en: "DATA" }, href: "#data" },
@@ -122,7 +122,7 @@ export const homeText = {
     en: "Three companies, three distinct ways to support beauty culture."
   },
   aboutTitle: {
-    jp: "Create The Future of Beauty and Health\n美と健康の未来を創造する",
+    jp: "美と健康の未来を創造する",
     en: "Create The Future of Beauty and Health"
   },
   aboutBody: {

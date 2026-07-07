@@ -28,6 +28,7 @@ import {
 
 export default function HomePage() {
   const { t } = useLanguage();
+  const featuredJobs = jobs.slice(0, 2);
 
   return (
     <>
@@ -335,17 +336,41 @@ export default function HomePage() {
         </ScrollSection> */}
 
         <ScrollSection className="section section--dark" id="recruit">
-          <Reveal className="container recruit-banner" direction="down">
-            <div>
-              <p className="eyebrow">RECRUIT</p>
-              <h2>{t(homeText.recruitTitle)}</h2>
-              <p>{t(homeText.recruitBody)}</p>
+          <Reveal className="container recruit-panel" direction="down">
+            <div className="recruit-banner">
+              <div>
+                <p className="eyebrow">RECRUIT</p>
+                <h2>{t(homeText.recruitTitle)}</h2>
+                <p>{t(homeText.recruitBody)}</p>
+              </div>
+              <div className="hero-actions">
+                <ButtonLink href="/jobs">{t(uiText.common.jobs)}</ButtonLink>
+              </div>
             </div>
-            <div className="hero-actions">
-              <ButtonLink href="/jobs">{t(uiText.common.jobs)}</ButtonLink>
-              <ButtonLink href="#faq" variant="secondary">
-                {t(uiText.common.faq)}
-              </ButtonLink>
+
+            <div className="recruit-featured-jobs">
+              {featuredJobs.map((job, index) => {
+                const company = companies.find((item) => item.slug === job.company);
+                return (
+                  <article className="recruit-job-card" key={job.id}>
+                    <div className="recruit-job-card__meta">
+                      <span style={{ color: company?.accent }}>{company?.name}</span>
+                      <span>{t(job.location)}</span>
+                      <span>{t(job.type)}</span>
+                    </div>
+                    <h3>{t(job.title)}</h3>
+                    <p>{t(job.mission)}</p>
+                    <ul>
+                      {job.tasks.slice(0, 2).map((task, taskIndex) => (
+                        <li key={`${job.id}-featured-task-${taskIndex}`}>{t(task)}</li>
+                      ))}
+                    </ul>
+                    <span className="recruit-job-card__index">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                  </article>
+                );
+              })}
             </div>
           </Reveal>
         </ScrollSection>
