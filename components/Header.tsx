@@ -43,7 +43,7 @@ export function Header() {
         </nav>
         <div className="site-header__actions">
           <LanguageToggle />
-          <ButtonLink href="#recruit">{t(uiText.common.entry)}</ButtonLink>
+          <ButtonLink href="/jobs">{t(uiText.common.entry)}</ButtonLink>
         </div>
         <button
           aria-label="Open menu"
