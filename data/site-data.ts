@@ -111,7 +111,7 @@ export const uiText = {
 
 export const homeText = {
   heroEyebrow: { jp: "COSMO GROUP RECRUITING SITE", en: "COSMO GROUP RECRUITING SITE" },
-  heroTitle: { jp: "胸に秘めた美への好奇心", en: "The Curiosity for Beauty Hidden in Your Heart" },
+  heroTitle: { jp: "胸に秘めた\n美への好奇心", en: "The Curiosity for Beauty Hidden in Your Heart" },
   heroLead: {
     jp: "今こそ思い切って「仕事」にしませんか。\nコスモグループと共に、美容業界に革命を。",
     en: "Now is the time to boldly make it your work.\nTogether with Cosmo Group, bring a revolution to the beauty industry."
