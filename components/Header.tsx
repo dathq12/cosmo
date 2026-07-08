@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { navItems, uiText } from "@/data/site-data";
 import { ButtonLink } from "@/components/ui/ButtonLink";
@@ -11,13 +11,42 @@ import { LanguageToggle } from "@/components/ui/LanguageToggle";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
+  const lastScrollY = useRef(0);
+  const ticking = useRef(false);
   const { t } = useLanguage();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 32);
-    onScroll();
-    window.addEventListener("scroll", onScroll);
+    lastScrollY.current = window.scrollY;
+    setScrolled(window.scrollY > 32);
+
+    const onScroll = () => {
+      if (ticking.current) {
+        return;
+      }
+
+      ticking.current = true;
+      window.requestAnimationFrame(() => {
+        const currentScrollY = window.scrollY;
+        const scrollDelta = currentScrollY - lastScrollY.current;
+
+        setScrolled(currentScrollY > 32);
+
+        if (currentScrollY <= 32) {
+          setHidden(false);
+        } else if (scrollDelta > 6 && currentScrollY > 96) {
+          setHidden(true);
+        } else if (scrollDelta < -6) {
+          setHidden(false);
+        }
+
+        lastScrollY.current = currentScrollY;
+        ticking.current = false;
+      });
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -30,7 +59,11 @@ export function Header() {
 
   return (
     <>
-      <header className={`site-header ${scrolled ? "site-header--scrolled" : ""}`}>
+      <header
+        className={`site-header ${scrolled ? "site-header--scrolled" : ""} ${
+          hidden && !open ? "site-header--hidden" : ""
+        }`}
+      >
         <Link href="/" className="site-header__brand">
           <CosmoLogo compact />
         </Link>

@@ -36,14 +36,18 @@ export function ScrollSection({
   );
 
   return (
-    <motion.section
+    <section
       ref={ref}
       id={id}
       data-snap-section={snap ? "true" : "false"}
       className={`scroll-section ${className ?? ""}`.trim()}
-      style={{ y, opacity, scale }}
     >
-      <div className="scroll-section__inner">{children}</div>
-    </motion.section>
+      <motion.div
+        className="scroll-section__inner"
+        style={{ y, opacity, scale }}
+      >
+        {children}
+      </motion.div>
+    </section>
   );
 }

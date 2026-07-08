@@ -59,42 +59,52 @@ export default function HomePage() {
                 </ButtonLink>
               </div>
             </HeroParallaxText>
-            <Reveal delay={0.12} className="hero__aside">
+            {/* <Reveal delay={0.12} className="hero__aside">
               <div className="hero-card">
                 <span>FIND YOUR PLACE</span>
                 <p>{t(homeText.heroCard)}</p>
               </div>
               <div className="scroll-indicator">SCROLL</div>
-            </Reveal>
+            </Reveal> */}
           </div>
         </section>
 
-        <ScrollSection className="section" id="about">
-          <div className="container">
-            <Reveal direction="down">
-              <SectionIntro
-                label="ABOUT US"
-                title={t(homeText.aboutTitle)}
-                body={t(homeText.aboutBody)}
+        <ScrollSection className="section section--flow section--flow-about" id="about">
+          <div className="container about-layout">
+            <div className="about-layout__content">
+              <Reveal direction="down">
+                <SectionIntro
+                  label="ABOUT US"
+                  title={t(homeText.aboutTitle)}
+                  body={t(homeText.aboutBody)}
+                />
+              </Reveal>
+              {/* <div className="pillar-grid">
+                {homeText.pillars.map((pillar, index) => (
+                  <Reveal
+                    key={pillar.title}
+                    delay={index * 0.08}
+                    direction={index % 2 === 0 ? "left" : "right"}
+                    className="pillar-card"
+                  >
+                    <h3>{pillar.title}</h3>
+                    <p>{t(pillar.body)}</p>
+                  </Reveal>
+                ))}
+              </div> */}
+            </div>
+            <Reveal direction="left" className="about-layout__media">
+              <Image
+                src="/assets/about-team-meeting.png"
+                alt="Cosmo Group team meeting"
+                fill
+                sizes="(max-width: 900px) 100vw, 42vw"
               />
             </Reveal>
-            <div className="pillar-grid">
-              {homeText.pillars.map((pillar, index) => (
-                <Reveal
-                  key={pillar.title}
-                  delay={index * 0.08}
-                  direction={index % 2 === 0 ? "left" : "right"}
-                  className="pillar-card"
-                >
-                  <h3>{pillar.title}</h3>
-                  <p>{t(pillar.body)}</p>
-                </Reveal>
-              ))}
-            </div>
           </div>
         </ScrollSection>
 
-        <ScrollSection className="section section--dark section--network" id="company">
+        <ScrollSection className="section section--flow section--flow-company section--network" id="company">
           <div className="container company-network">
             <Reveal direction="down" className="company-network__heading">
               <p className="eyebrow">COSMO GROUP</p>
@@ -166,7 +176,7 @@ export default function HomePage() {
 
 
 
-        <ScrollSection className="section" id="people">
+        <ScrollSection className="section section--flow section--flow-people" id="people">
           <div className="container">
             <Reveal direction="left">
               <SectionIntro
@@ -192,7 +202,9 @@ export default function HomePage() {
                     />
                   </div>
                   <div className="interview-card__content">
-                    <p className="interview-card__meta">{t(interview.role)}</p>
+                    <p className="interview-card__meta">
+                      {t(interview.role)} / {t(interview.year)}
+                    </p>
                     <h3>{interview.name}</h3>
                     <p>“{t(interview.quote)}”</p>
                   </div>
@@ -202,7 +214,7 @@ export default function HomePage() {
           </div>
         </ScrollSection>
 
-        <ScrollSection className="section section--dark" id="data">
+        <ScrollSection className="section section--flow section--flow-data section--data" id="data">
           <div className="container">
             <Reveal direction="down">
               <SectionIntro
@@ -217,7 +229,7 @@ export default function HomePage() {
           </div>
         </ScrollSection>
 
-        <ScrollSection className="section section--warm" id="culture">
+        <ScrollSection className="section section--flow section--flow-culture" id="culture">
           <div className="container">
             <Reveal direction="right">
               <SectionIntro
@@ -235,7 +247,6 @@ export default function HomePage() {
                   className="culture-card"
                 >
                   <span>{pillar.title}</span>
-                  <h3>{pillar.title}</h3>
                   <p>{t(pillar.body)}</p>
                 </Reveal>
               ))}
@@ -367,9 +378,9 @@ export default function HomePage() {
                         <li key={`${job.id}-featured-task-${taskIndex}`}>{t(task)}</li>
                       ))}
                     </ul>
-                    <span className="recruit-job-card__index">
+                    {/* <span className="recruit-job-card__index">
                       {String(index + 1).padStart(2, "0")}
-                    </span>
+                    </span> */}
                   </article>
                 );
               })}

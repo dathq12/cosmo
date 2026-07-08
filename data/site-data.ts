@@ -183,7 +183,7 @@ export const homeText = {
     en: "Editorial-style interviews reveal the criteria, pride, and everyday joy behind each company’s work."
   },
   cultureTitle: {
-    jp: "働く環境の魅力を、抽象語で終わらせない。",
+    jp: "働く環境の魅力を、\n抽象語で終わらせない。",
     en: "Make the culture feel concrete, not abstract."
   },
   cultureBody: {
@@ -282,7 +282,7 @@ export const companies: Company[] = [
     name: "COSMO",
     label: { jp: "株式会社コスモ", en: "Cosmo Co., Ltd." },
     englishTag: "Salon Partner",
-    accent: "#d88870",
+    accent: "#b99a5b",
     softAccent: "rgba(216, 136, 112, 0.14)",
     tagline: {
       jp: "美容室のいちばん近くで、成長を支える。",
@@ -323,7 +323,7 @@ export const companies: Company[] = [
     name: "CREATE",
     label: { jp: "株式会社CREATE", en: "CREATE Co., Ltd." },
     englishTag: "Product Engineering",
-    accent: "#4f6788",
+    accent: "#b99a5b",
     softAccent: "rgba(79, 103, 136, 0.14)",
     tagline: {
       jp: "美しさを、技術でかたちにする。",
@@ -489,33 +489,33 @@ export const interviews: Interview[] = [
   {
     name: "A. Tanaka",
     role: { jp: "営業 / Cosmo", en: "Sales / Cosmo" },
-    year: { jp: "2021年入社", en: "Joined in 2021" },
+    year: { jp: "2019年入社", en: "Joined in 2019" },
     company: "cosmo",
     quote: {
-      jp: "提案した商品だけでなく、サロンの未来まで一緒に考えられることがこの仕事の魅力です。",
-      en: "What makes this work meaningful is that we do not just propose products. We think together about a salon’s future."
+      jp: "自分の提案をお客様に受け入れていただき、その結果として売上目標を達成できた時は素直に嬉しいですね。",
+      en: "I feel genuinely happy when customers accept my proposals and, as a result, I am able to achieve my sales targets."
     },
     image: "/assets/cosmo-portrait.png"
   },
   {
     name: "K. Sato",
     role: { jp: "機構設計 / Create", en: "Mechanical Design / Create" },
-    year: { jp: "2019年入社", en: "Joined in 2019" },
+    year: { jp: "2003年入社", en: "Joined in 2003" },
     company: "create",
     quote: {
-      jp: "小さな使用感の差が、製品全体の信頼を大きく変える。そこに設計の面白さがあります。",
-      en: "A small difference in user feel can reshape trust in the whole product. That is what makes design work fascinating."
+      jp: "以前は中国の銀行で働いていました。国際的な仕事に憧れたことがきっかけで会社を辞め、中国から日本に留学したんです。",
+      en: "I used to work at a bank in China. My admiration for international work inspired me to leave my job and study abroad in Japan."
     },
     image: "/assets/create-portrait.png"
   },
   {
     name: "M. Inoue",
     role: { jp: "採用・人事 / Group", en: "Recruiting & HR / Group" },
-    year: { jp: "2020年入社", en: "Joined in 2020" },
+    year: { jp: "2014年入社", en: "Joined in 2014" },
     company: "cosmo",
     quote: {
-      jp: "会社の違いを正直に伝えることで、入社後の納得感と活躍が変わると感じています。",
-      en: "When we explain the differences between companies honestly, candidates join with more conviction and perform better after joining."
+      jp: "私が所属するクレイツは、コスモグループ内のメーカー企業として、ドライヤーをはじめとする様々な美容商材を手掛けています。",
+      en: "Create Ion, where I belong, is a manufacturer within the Cosmo Group. We handle various beauty products, including hair dryers."
     },
     image: "/assets/brand-showroom.png"
   }
