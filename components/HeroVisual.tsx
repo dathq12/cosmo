@@ -70,7 +70,7 @@ export function HeroVisual() {
 
   return (
     <div ref={ref} className="hero__backdrop hero-visual" aria-hidden="true">
-      <motion.div
+      {/* <motion.div
         className="hero-visual__ambient"
         style={{ y: ambientY, scale: ambientScale, rotate: ambientRotate }}
       >
@@ -81,7 +81,7 @@ export function HeroVisual() {
           priority
           sizes="100vw"
         />
-      </motion.div>
+      </motion.div> */}
 
       <motion.div
         className="hero-visual__base"
@@ -146,13 +146,13 @@ export function HeroVisual() {
           />
         </motion.div>
 
-        <motion.div className="hero-visual__strip" style={{ y: stripY, rotate: stripRotate }}>
+        {/* <motion.div className="hero-visual__strip" style={{ y: stripY, rotate: stripRotate }}>
           {strips.map((strip) => (
             <div key={strip.src} className={strip.className}>
               <Image src={strip.src} alt={strip.alt} fill sizes="160px" />
             </div>
           ))}
-        </motion.div>
+        </motion.div> */}
       </div>
     </div>
   );

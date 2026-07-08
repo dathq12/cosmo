@@ -232,7 +232,7 @@ export const homeText = {
 
 export const groupNetwork = {
   center: {
-    icon: "/assets/network-icon-holding.png",
+    icon: "/assets/network-icon-new-holding.svg",
     // icon: "/assets/cosmo-logo.png",
     name: { jp: "コスモホールディングス", en: "Cosmo Holdings" },
     body: { jp: "グループ統括", en: "Parent company / holding company" }
@@ -241,35 +241,35 @@ export const groupNetwork = {
     {
       id: "cosmo",
       position: "top-left",
-      icon: "/assets/network-icon-box.png",
+      icon: "/assets/network-icon-new-box.svg",
       name: { jp: "株式会社コスモ", en: "Cosmo Co., Ltd." },
       body: { jp: "美容ディーラー事業", en: "Beauty product distribution business" }
     },
     {
       id: "holistic-cubes",
       position: "bottom-left",
-      icon: "/assets/network-icon-device.png",
+      icon: "/assets/network-icon-new-device.svg",
       name: { jp: "ポリスティックキューブス", en: "Polistic Cubes" },
       body: { jp: "美容機器ブランド事業", en: "Beauty device brand business" }
     },
     {
       id: "reiso",
       position: "top-right",
-      icon: "/assets/network-icon-lab.png",
+      icon: "/assets/network-icon-new-lab.svg",
       name: { jp: "株式会社レイソ", en: "Reiso Co., Ltd." },
       body: { jp: "美容機器メーカー事業", en: "Beauty device manufacturing business" }
     },
     {
       id: "group-related",
       position: "middle-right",
-      icon: "/assets/network-icon-people.png",
+      icon: "/assets/network-icon-new-people.svg",
       name: { jp: "グループ会社", en: "Group Company" },
       body: { jp: "関連事業", en: "Related business" }
     },
     {
       id: "group-other",
       position: "bottom-center",
-      icon: "/assets/network-icon-care.png",
+      icon: "/assets/network-icon-new-care.svg",
       name: { jp: "グループ会社", en: "Group Company" },
       body: { jp: "関連事業", en: "Related business" }
     }
