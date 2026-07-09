@@ -282,8 +282,8 @@ export function StatsGrid() {
       </article>
 
       <article className="data-card data-card--roles">
-        <h3>{t(dataMetrics.roles.label)}</h3>
         <div className="data-role-bars">
+          <h3>{t(dataMetrics.roles.label)}</h3>
           {dataMetrics.roles.items.map((item) => (
             <div
               className={`data-role-stat${item.value === 63 ? " data-role-stat--primary" : ""}`}
