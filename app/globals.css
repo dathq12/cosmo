@@ -661,7 +661,7 @@ img {
 }
 
 .hero-visual__panel--top {
-  right: 3%;
+  right: 1%;
   top: 18%;
   width: clamp(320px, 34%, 400px);
   aspect-ratio: 1.28;
