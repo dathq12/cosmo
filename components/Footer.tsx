@@ -29,8 +29,8 @@ export function Footer() {
           <p className="site-footer__heading">{t(uiText.footer.recruit)}</p>
           <div className="site-footer__links">
             <Link href="/jobs">{t(uiText.common.jobsList)}</Link>
-            <a href="#faq">FAQ</a>
-            <a href="#recruit">{t(uiText.common.entry)}</a>
+            <Link href="/#faq">FAQ</Link>
+            <Link href="/#recruit">{t(uiText.common.entry)}</Link>
           </div>
         </div>
       </div>

@@ -46,14 +46,14 @@ export type Interview = {
 };
 
 export const navItems = [
-  { label: { jp: "会社を知る", en: "ABOUT" }, href: "#about" },
-  { label: { jp: "コスモグループについて", en: "COSMO GROUP" }, href: "#company" },
-  // { label: { jp: "仕事を知る", en: "WORK" }, href: "#work" },
-  { label: { jp: "人を知る", en: "PEOPLE" }, href: "#people" },
-  { label: { jp: "数字で見る", en: "DATA" }, href: "#data" },
-  { label: { jp: "環境を知る", en: "CULTURE" }, href: "#culture" },
-  { label: { jp: "採用情報", en: "RECRUIT" }, href: "#recruit" },
-  { label: { jp: "FAQ", en: "FAQ" }, href: "#faq" }
+  { label: { jp: "会社を知る", en: "ABOUT" }, href: "/#about" },
+  { label: { jp: "コスモグループについて", en: "COSMO GROUP" }, href: "/#company" },
+  // { label: { jp: "仕事を知る", en: "WORK" }, href: "/#work" },
+  { label: { jp: "人を知る", en: "PEOPLE" }, href: "/#people" },
+  { label: { jp: "数字で見る", en: "DATA" }, href: "/#data" },
+  { label: { jp: "環境を知る", en: "CULTURE" }, href: "/#culture" },
+  { label: { jp: "採用情報", en: "RECRUIT" }, href: "/#recruit" },
+  { label: { jp: "FAQ", en: "FAQ" }, href: "/#faq" }
 ];
 
 export const uiText = {

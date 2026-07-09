@@ -69,9 +69,9 @@ export function Header() {
         </Link>
         <nav className="site-header__nav" aria-label="Primary">
           {navItems.map((item) => (
-            <a key={item.href} href={item.href}>
+            <Link key={item.href} href={item.href}>
               {t(item.label)}
-            </a>
+            </Link>
           ))}
         </nav>
         <div className="site-header__actions">
@@ -95,13 +95,13 @@ export function Header() {
           <LanguageToggle />
           <nav aria-label="Mobile">
             {navItems.map((item) => (
-              <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
+              <Link key={item.href} href={item.href} onClick={() => setOpen(false)}>
                 {t(item.label)}
-              </a>
+              </Link>
             ))}
-            <a href="/jobs" onClick={() => setOpen(false)}>
+            <Link href="/jobs" onClick={() => setOpen(false)}>
               {t(uiText.common.jobsList)}
-            </a>
+            </Link>
           </nav>
         </div>
       </div>
