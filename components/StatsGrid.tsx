@@ -286,19 +286,13 @@ export function StatsGrid() {
         <div className="data-role-bars">
           {dataMetrics.roles.items.map((item) => (
             <div
-              className={`data-role-bar${item.value === 63 ? " data-role-bar--primary" : ""}`}
+              className={`data-role-stat${item.value === 63 ? " data-role-stat--primary" : ""}`}
               key={item.label.jp}
-              style={{ "--value": `${item.value}%` } as CSSProperties}
             >
-              <div className="data-role-bar__label">
-                <span>{t(item.label)}</span>
-                <strong>
-                  <CountUp value={item.value} decimals={item.value % 1 === 0 ? 0 : 1} suffix="%" />
-                </strong>
-              </div>
-              <div className="data-role-bar__track">
-                <span />
-              </div>
+              <span>{t(item.label)}</span>
+              <strong>
+                <CountUp value={item.value} decimals={item.value % 1 === 0 ? 0 : 1} suffix="%" />
+              </strong>
             </div>
           ))}
         </div>
@@ -321,7 +315,6 @@ export function StatsGrid() {
                 <MetricIcon name={item.icon} />
               </span>
               <strong>{t(item.label)}</strong>
-              <p>{t(item.body)}</p>
             </div>
           ))}
         </div>

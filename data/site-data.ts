@@ -572,10 +572,10 @@ export const dataMetrics = {
       en: "A culture that celebrates results and honors challenges. Once a year, we recognize teammates who shine."
     },
     items: [
-      { label: { jp: "No.1", en: "No.1" }, body: { jp: "私がNo.1だっ!", en: "I am No.1!" }, icon: "crown" },
-      { label: { jp: "いいえ、私よっ!", en: "No, it is me!" }, body: { jp: "いいえ、私よっ!", en: "No, it is me!" }, icon: "heart" },
-      { label: { jp: "いや、俺だっ!", en: "No, it is me!" }, body: { jp: "いや、俺だっ!", en: "No, it is me!" }, icon: "star" },
-      { label: { jp: "結局、誰よ…", en: "So, who is it?" }, body: { jp: "結局、誰よ…", en: "So, who is it?" }, icon: "medal" }
+      { label: { jp: "私がNo.1だっ!", en: "I am No.1!" }, icon: "crown" },
+      { label: { jp: "いいえ、私よっ!", en: "No, it is me!" },  icon: "heart" },
+      { label: { jp: "いや、俺だっ!", en: "No, it is me!" }, icon: "star" },
+      { label: { jp: "結局、誰よ…", en: "So, who is it?" }, icon: "medal" }
     ]
   }
 } as const;
