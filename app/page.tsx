@@ -26,6 +26,87 @@ import {
   uiText
 } from "@/data/site-data";
 
+function NetworkLineIcon({ name }: { name: string }) {
+  const common = {
+    fill: "none",
+    stroke: "currentColor",
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    strokeWidth: 1.8
+  };
+
+  if (name === "holding") {
+    return (
+      <svg viewBox="0 0 48 48" aria-hidden="true">
+        <path {...common} d="M10 40h28" />
+        <path {...common} d="M16 40V16l8-4 8 4v24" />
+        <path {...common} d="M8 40V24l8-4" />
+        <path {...common} d="M40 40V24l-8-4" />
+        <path {...common} d="M22 40V28h4v12" />
+        <path {...common} d="M21 18v5" />
+        <path {...common} d="M27 18v5" />
+      </svg>
+    );
+  }
+
+  if (name === "cosmo") {
+    return (
+      <svg viewBox="0 0 48 48" aria-hidden="true">
+        <path {...common} d="m24 8 15 8-15 8-15-8 15-8Z" />
+        <path {...common} d="M9 16v16l15 8 15-8V16" />
+        <path {...common} d="M24 24v16" />
+        <path {...common} d="m16 12 15 8" />
+      </svg>
+    );
+  }
+
+  if (name === "holistic-cubes") {
+    return (
+      <svg viewBox="0 0 48 48" aria-hidden="true">
+        <path {...common} d="M19 10h10" />
+        <path {...common} d="M18 14h12v22a6 6 0 0 1-12 0V14Z" />
+        <path {...common} d="M21 22h6" />
+        <path {...common} d="M21 30h6" />
+        <path {...common} d="M24 7v3" />
+      </svg>
+    );
+  }
+
+  if (name === "reiso") {
+    return (
+      <svg viewBox="0 0 48 48" aria-hidden="true">
+        <path {...common} d="M20 8h8" />
+        <path {...common} d="M21 8v12L12 36a4 4 0 0 0 3.5 6h17a4 4 0 0 0 3.5-6l-9-16V8" />
+        <path {...common} d="M17 32h14" />
+        <path {...common} d="M20 36c2.4-2 5.6-2 8 0" />
+        <path {...common} d="M34 15h4" />
+        <path {...common} d="M36 13v4" />
+      </svg>
+    );
+  }
+
+  if (name === "group-related") {
+    return (
+      <svg viewBox="0 0 48 48" aria-hidden="true">
+        <path {...common} d="M24 21a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z" />
+        <path {...common} d="M13 38c1.4-7 5.2-11 11-11s9.6 4 11 11" />
+        <path {...common} d="M11 23a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" />
+        <path {...common} d="M4 37c.8-5.4 3.6-8.6 8.2-9" />
+        <path {...common} d="M37 23a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" />
+        <path {...common} d="M35.8 28c4.6.4 7.4 3.6 8.2 9" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg viewBox="0 0 48 48" aria-hidden="true">
+      <path {...common} d="m12 29 12-12 12 12" />
+      <path {...common} d="m16 33 8-8 8 8" />
+      <path {...common} d="m20 37 4-4 4 4" />
+    </svg>
+  );
+}
+
 export default function HomePage() {
   const { t } = useLanguage();
   const featuredJobs = jobs.slice(0, 2);
@@ -127,13 +208,7 @@ export default function HomePage() {
               </svg>
               <div className="company-network__center">
                 <div className="company-network__icon company-network__icon--center">
-                  <Image
-                    src={groupNetwork.center.icon}
-                    alt=""
-                    width={144}
-                    height={144}
-                    sizes="144px"
-                  />
+                  <NetworkLineIcon name="holding" />
                 </div>
                 <h3>{t(groupNetwork.center.name)}</h3>
                 <p>{t(groupNetwork.center.body)}</p>
@@ -144,7 +219,7 @@ export default function HomePage() {
                   className={`company-network__node company-network__node--${node.position}`}
                 >
                   <div className="company-network__icon">
-                    <Image src={node.icon} alt="" width={96} height={96} sizes="96px" />
+                    <NetworkLineIcon name={node.id} />
                   </div>
                   <div>
                     <h3>{t(node.name)}</h3>
