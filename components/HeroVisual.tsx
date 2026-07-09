@@ -51,22 +51,22 @@ export function HeroVisual() {
 
   const featureY = useTransform(smoothProgress, [0, 1], reduceMotion ? [0, 0] : [0, -120]);
   const featureX = useTransform(smoothProgress, [0, 1], reduceMotion ? [0, 0] : [0, -36]);
-  const featureRotate = useTransform(smoothProgress, [0, 1], reduceMotion ? [0, 0] : [-7, 5]);
+  const featureRotate = useTransform(smoothProgress, [0, 1], [0, 0]);
   const featureScale = useTransform(smoothProgress, [0, 1], reduceMotion ? [1, 1] : [1.02, 0.95]);
 
   const topY = useTransform(smoothProgress, [0, 1], reduceMotion ? [0, 0] : [0, -76]);
   const topX = useTransform(smoothProgress, [0, 1], reduceMotion ? [0, 0] : [0, 58]);
-  const topRotate = useTransform(smoothProgress, [0, 1], reduceMotion ? [0, 0] : [7, -4]);
+  const topRotate = useTransform(smoothProgress, [0, 1], [0, 0]);
 
   const bottomY = useTransform(smoothProgress, [0, 1], reduceMotion ? [0, 0] : [0, -36]);
   const bottomX = useTransform(smoothProgress, [0, 1], reduceMotion ? [0, 0] : [0, -72]);
-  const bottomRotate = useTransform(smoothProgress, [0, 1], reduceMotion ? [0, 0] : [-9, 6]);
+  const bottomRotate = useTransform(smoothProgress, [0, 1], [0, 0]);
 
   const sideY = useTransform(smoothProgress, [0, 1], reduceMotion ? [0, 0] : [0, -144]);
-  const sideRotate = useTransform(smoothProgress, [0, 1], reduceMotion ? [0, 0] : [12, -10]);
+  const sideRotate = useTransform(smoothProgress, [0, 1], [0, 0]);
 
   const stripY = useTransform(smoothProgress, [0, 1], reduceMotion ? [0, 0] : [0, -58]);
-  const stripRotate = useTransform(smoothProgress, [0, 1], reduceMotion ? [0, 0] : [-2, 3]);
+  const stripRotate = useTransform(smoothProgress, [0, 1], [0, 0]);
 
   return (
     <div ref={ref} className="hero__backdrop hero-visual" aria-hidden="true">

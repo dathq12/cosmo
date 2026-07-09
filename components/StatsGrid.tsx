@@ -201,14 +201,20 @@ export function StatsGrid() {
           <p>{t(dataMetrics.growth.note)}</p>
         </div>
         <div className="data-growth-chart" aria-hidden="true">
-          <span />
-          <span />
-          <span />
-          <span />
-          <span />
-          <svg viewBox="0 0 160 96">
-            <path d="M10 76 48 60 78 37 102 48 146 12" />
-            <path d="m130 12 16 0-2 18" />
+          <svg viewBox="0 0 280 130" preserveAspectRatio="xMidYMax meet">
+            <path
+              className="data-growth-chart__wave data-growth-chart__wave--sage"
+              d="M18 128C36 106 62 92 92 94C120 96 140 88 154 74C168 58 184 60 200 74C216 88 230 84 242 62C254 42 262 30 266 24V128H18Z"
+            />
+            <path
+              className="data-growth-chart__wave data-growth-chart__wave--teal"
+              d="M18 128C42 118 66 108 96 106C124 104 144 92 158 68C170 48 184 38 198 42C212 46 220 62 234 66C248 70 258 44 266 30V128H18Z"
+            />
+
+            <path
+              className="data-growth-chart__wave data-growth-chart__wave--amber"
+              d="M122 128C138 118 150 94 162 62C174 28 186 10 198 14C210 18 216 56 228 64C240 72 246 32 256 14C262 6 265 18 266 28V128H122Z"
+            />
           </svg>
         </div>
       </article>
