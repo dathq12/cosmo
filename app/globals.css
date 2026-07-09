@@ -2237,21 +2237,22 @@ img {
 
 .jobs-hero__image--team {
   inset: -7%;
+  z-index: 0;
   background-image: url("/assets/jobs-hero-team.png");
   filter: saturate(1.05) brightness(0.74);
-  animation:
-    heroBaseOpening 2.45s cubic-bezier(0.16, 1, 0.3, 1) 1 both,
-    heroBaseLoop 7s cubic-bezier(0.22, 1, 0.36, 1) 2.45s infinite;
+  animation: none;
+  transform: none;
 }
 
 .jobs-hero__image--engineer,
 .jobs-hero__image--lab {
+  z-index: 2;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 30px;
   box-shadow:
-    0 28px 90px rgba(0, 0, 0, 0.32),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    0 30px 100px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
 }
 
 .jobs-hero__image--engineer::after,
@@ -2265,29 +2266,30 @@ img {
 }
 
 .jobs-hero__image--engineer {
-  right: 6%;
+  right: 10%;
   top: 18%;
   width: min(28vw, 420px);
   aspect-ratio: 1.28;
   background-image: url("/assets/jobs-hero-engineer.png");
-  opacity: 0.7;
-  filter: saturate(0.9) brightness(0.92);
+  opacity: 1;
+  filter: saturate(1.06) brightness(1.08);
   animation: heroPanelFloatB 5.8s ease-in-out 2.8s infinite;
 }
 
 .jobs-hero__image--lab {
-  right: 19%;
+  right: 23%;
   bottom: 8%;
   width: min(18vw, 270px);
   aspect-ratio: 0.76;
   background-image: url("/assets/jobs-hero-lab.png");
   background-position: center top;
-  opacity: 0.78;
-  filter: saturate(0.95) brightness(0.98);
+  opacity: 1;
+  filter: saturate(1.05) brightness(1.08);
   animation: heroPanelFloatA 6.5s ease-in-out 2.5s infinite;
 }
 
 .jobs-hero__glow {
+  z-index: 2;
   border-radius: 999px;
   filter: blur(68px);
   mix-blend-mode: screen;
@@ -2316,14 +2318,12 @@ img {
   background:
     linear-gradient(180deg, rgba(8, 8, 8, 0.16), rgba(8, 8, 8, 0.74)),
     linear-gradient(90deg, rgba(8, 8, 8, 0.88), rgba(8, 8, 8, 0.52) 42%, rgba(8, 8, 8, 0.12) 76%);
-  animation:
-    heroOverlayIntro 2.2s ease-out 1 both,
-    heroOverlayPulse 5.9s ease-in-out 2.2s infinite;
+  animation: none;
 }
 
 .jobs-hero__content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   padding-bottom: 18px;
 }
 
@@ -2653,7 +2653,7 @@ img {
   }
 
   .jobs-hero__image--engineer {
-    right: -7%;
+    right: 1%;
     top: 18%;
     width: min(54vw, 300px);
   }
