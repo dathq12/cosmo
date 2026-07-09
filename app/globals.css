@@ -3271,19 +3271,15 @@ img {
 }
 
 .data-card--growth {
-  display: grid;
-  grid-template-columns: minmax(174px, 0.46fr) minmax(380px, 1.54fr);
-  gap: 26px;
-  align-items: start;
+  min-height: 330px;
+  display: block;
   border-color: var(--data-border);
   background: rgba(255, 252, 247, 0.8);
 }
 
 .data-card--growth > div:first-child {
-  display: flex;
-  flex-direction: column;
-  align-self: stretch;
-  transform: translateY(-10px);
+  max-width: 270px;
+  transform: none;
 }
 
 .section--data .data-card--growth h3,
@@ -3300,15 +3296,14 @@ img {
 }
 
 .data-card--growth h3 {
-  margin-bottom: 18px;
+  margin-bottom: 24px;
   font-size: clamp(0.94rem, 1vw, 1.2rem);
-  transform: translateY(22px);
+  transform: none;
 }
 
 .data-card--growth .data-card__value--large {
-  margin-top: auto;
   margin-bottom: 8px;
-  font-size: clamp(6.38rem, 9.3vw, 5.98rem);
+  font-size: clamp(5.8rem, 8.4vw, 5rem);
   line-height: 0.92;
 }
 
@@ -3349,17 +3344,16 @@ img {
 }
 
 .data-growth-chart {
-  position: relative;
-  inset: auto;
-  width: calc(108% - 24px);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 82%;
   min-width: 0;
-  min-height: 300px;
-  height: 300px;
-  align-self: start;
-  justify-self: end;
-  padding: 0 24px 0 0;
+  min-height: 230px;
+  height: 230px;
+  padding: 0;
   opacity: 1;
-  transform: translate(6px, -16px);
+  transform: none;
   box-sizing: border-box;
 }
 
@@ -3370,11 +3364,11 @@ img {
 .data-growth-chart svg {
   display: block;
   inset: 0;
-  width: 110%;
-  height: 150%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   stroke: none;
-  transform: translate(-30px, -177px);
+  transform: none;
   filter: none;
   opacity: 1;
   overflow: visible;
@@ -3391,15 +3385,15 @@ img {
 }
 
 .data-growth-chart__wave--sage {
-  fill: rgba(143, 175, 159, 0.24);
+  fill: rgba(63, 153, 158, 0.78);
 }
 
 .data-growth-chart__wave--teal {
-  fill: rgba(0, 166, 180, 0.64);
+  fill: rgba(82, 141, 81, 0.72);
 }
 
 .data-growth-chart__wave--amber {
-  fill: rgba(255, 194, 71, 0.74);
+  fill: rgba(255, 191, 86, 0.78);
 }
 
 .data-growth-chart__trend-shadow {
@@ -3435,7 +3429,7 @@ img {
   grid-row: 1 / span 2;
   justify-self: end;
   width: min(230px, 100%);
-  background: conic-gradient(#ffc247 0 var(--women), #00a6b4 var(--women) 100%);
+  background: conic-gradient(#dedede 0 var(--women), #a61ce5 var(--women) 100%);
 }
 
 .data-gender__chart span {
