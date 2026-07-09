@@ -240,7 +240,7 @@ export function StatsGrid() {
         </div>
       </article>
 
-      <article className="data-card data-card--rate">
+      <article className="data-card data-card--rate data-card--marriage">
         <h3>{t(dataMetrics.marriage.label)}</h3>
         <div className="data-card__value">
           <CountUp value={dataMetrics.marriage.value} decimals={1} suffix={dataMetrics.marriage.suffix} />
@@ -252,7 +252,7 @@ export function StatsGrid() {
         </div>
       </article>
 
-      <article className="data-card data-card--rate">
+      <article className="data-card data-card--rate data-card--parental">
         <h3>{t(dataMetrics.parentalLeave.label)}</h3>
         <div className="data-card__value">
           <CountUp
