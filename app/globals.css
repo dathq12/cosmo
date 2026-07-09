@@ -645,15 +645,16 @@ img {
 }
 
 .hero-visual__panel--feature {
-  left: 52%;
-  bottom: 10%;
+  left: 57%;
+  bottom: 40%;
   width: min(25vw, 360px);
   aspect-ratio: 0.76;
+  z-index: 1000;
   animation: heroPanelFloatA 6.5s ease-in-out 2.5s infinite;
 }
 
 .hero-visual__panel--top {
-  right: 7%;
+  right: 14%;
   top: 14%;
   width: min(27vw, 420px);
   aspect-ratio: 1.28;
@@ -661,16 +662,16 @@ img {
 }
 
 .hero-visual__panel--bottom {
-  left: 42%;
-  bottom: 6%;
+  left: 47%;
+  bottom: 32%;
   width: min(22vw, 320px);
   aspect-ratio: 1.18;
   animation: heroPanelFloatC 6.9s ease-in-out 2.6s infinite;
 }
 
 .hero-visual__panel--side {
-  right: 18%;
-  bottom: -4%;
+  right: 21%;
+  bottom: 23%;
   width: min(16vw, 240px);
   aspect-ratio: 0.78;
   animation: heroPanelFloatD 6.4s ease-in-out 2.9s infinite;
@@ -1005,7 +1006,7 @@ img {
 .company-network__map {
   position: relative;
   min-height: 680px;
-  margin-top: 32px;
+  margin-top: 12px;
   /* border: 1px solid rgba(216, 185, 126, 0.28); */
   border-radius: 38px;
   /* background:
@@ -1213,7 +1214,7 @@ img {
 }
 
 .company-network__caption {
-  margin-top: 78px;
+  margin-top: 84px;
   text-align: center;
 }
 
@@ -1469,7 +1470,7 @@ img {
 }
 
 .data-card--growth {
-  grid-column: span 4;
+  grid-column: span 6;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1477,13 +1478,13 @@ img {
 }
 
 .data-card--gender {
-  grid-column: span 3;
+  grid-column: span 6;
   min-height: 286px;
 }
 
 .data-card--roles {
-  grid-column: span 5;
-  min-height: 286px;
+  grid-column: 1 / -1;
+  min-height: auto;
 }
 
 .data-card--rate {
@@ -1598,7 +1599,7 @@ img {
   width: 48%;
   aspect-ratio: 1;
   border-radius: 50%;
-  background: rgba(255, 253, 248, 0.84);
+  background: rgb(255, 253, 248);
   box-shadow: inset 0 0 0 1px rgba(185, 154, 91, 0.14);
 }
 
@@ -1634,17 +1635,20 @@ img {
 
 .data-role-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px 16px;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .data-role {
   min-width: 0;
   display: grid;
-  grid-template-rows: auto minmax(2.4em, auto) auto;
-  gap: 8px;
-  align-content: start;
-  padding-top: 2px;
+  gap: 10px;
+  align-content: center;
+  min-height: 96px;
+  padding: 18px 14px;
+  border: 1px solid rgba(185, 154, 91, 0.16);
+  border-radius: 14px;
+  background: rgba(255, 253, 248, 0.6);
 }
 
 .data-role__icon,
@@ -1677,7 +1681,6 @@ img {
   overflow-wrap: anywhere;
   font-size: 0.86rem;
   line-height: 1.45;
-  min-height: 2.6em;
 }
 
 .data-people-illustration,
@@ -2453,7 +2456,7 @@ img {
 
   .data-card--rate,
   .data-card--benefits {
-    grid-column: span 3;
+    grid-column: span 2;
   }
 
   .data-card--awards {
@@ -2664,14 +2667,9 @@ img {
     gap: 16px 12px;
   }
 
-  .data-role__icon {
-    width: 44px;
-    height: 44px;
-  }
-
-  .data-role__icon svg {
-    width: 25px;
-    height: 25px;
+  .data-role {
+    min-height: 82px;
+    padding: 16px 14px;
   }
 
   .data-card__value {

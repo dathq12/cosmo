@@ -240,23 +240,6 @@ export function StatsGrid() {
         </div>
       </article>
 
-      <article className="data-card data-card--roles">
-        <h3>{t(dataMetrics.roles.label)}</h3>
-        <div className="data-role-grid">
-          {dataMetrics.roles.items.map((item) => (
-            <div className="data-role" key={item.label.jp}>
-              <span className="data-role__icon">
-                <MetricIcon name={item.icon} />
-              </span>
-              <span>{t(item.label)}</span>
-              <strong>
-                <CountUp value={item.value} decimals={item.value % 1 === 0 ? 0 : 1} suffix="%" />
-              </strong>
-            </div>
-          ))}
-        </div>
-      </article>
-
       <article className="data-card data-card--rate">
         <h3>{t(dataMetrics.marriage.label)}</h3>
         <div className="data-card__value">
@@ -293,6 +276,20 @@ export function StatsGrid() {
                 <MetricIcon name={item.icon} />
               </span>
               <span>{t(item.label)}</span>
+            </div>
+          ))}
+        </div>
+      </article>
+
+      <article className="data-card data-card--roles">
+        <h3>{t(dataMetrics.roles.label)}</h3>
+        <div className="data-role-grid">
+          {dataMetrics.roles.items.map((item) => (
+            <div className="data-role" key={item.label.jp}>
+              <span>{t(item.label)}</span>
+              <strong>
+                <CountUp value={item.value} decimals={item.value % 1 === 0 ? 0 : 1} suffix="%" />
+              </strong>
             </div>
           ))}
         </div>
