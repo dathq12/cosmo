@@ -178,9 +178,9 @@ function MetricIcon({ name }: { name: MetricIconName }) {
 
   return (
     <svg viewBox="0 0 32 32" aria-hidden="true">
-      <path {...common} d="M16 5a6 6 0 0 1 6 6v3a6 6 0 0 1-12 0v-3a6 6 0 0 1 6-6Z" />
-      <path {...common} d="M11 20 9 28l7-4 7 4-2-8" />
-      <path {...common} d="M12 12h8" />
+      <path {...common} d="M16 4a6 6 0 0 1 6 6v3a6 6 0 0 1-12 0v-3a6 6 0 0 1 6-6Z" />
+      <path {...common} d="M11 19 9.5 26.5l6.5-3.6 6.5 3.6L21 19" />
+      <path {...common} d="M12 11h8" />
     </svg>
   );
 }
