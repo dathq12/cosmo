@@ -217,11 +217,11 @@ export default function HomePage() {
         <ScrollSection className="section section--flow section--flow-data section--data" id="data">
           <div className="container">
             <Reveal direction="down">
-              <SectionIntro
-                label="DATA"
-                title={t(homeText.dataTitle)}
-                body={t(homeText.dataBody)}
-              />
+              <div className="data-heading">
+                <p className="data-heading__label">DATA</p>
+                <h2>数字で見るCOSMO</h2>
+                <p>働く環境やチームの特徴を、数字でわかりやすくご紹介します。</p>
+              </div>
             </Reveal>
             <Reveal delay={0.08} direction="up">
               <StatsGrid />

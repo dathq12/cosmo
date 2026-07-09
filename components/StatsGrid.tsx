@@ -245,11 +245,11 @@ export function StatsGrid() {
         <div className="data-card__value">
           <CountUp value={dataMetrics.marriage.value} decimals={1} suffix={dataMetrics.marriage.suffix} />
         </div>
-        <div className="data-people-illustration" aria-hidden="true">
+        {/* <div className="data-people-illustration" aria-hidden="true">
           <span />
           <span />
           <i />
-        </div>
+        </div> */}
       </article>
 
       <article className="data-card data-card--rate data-card--parental">
@@ -260,11 +260,11 @@ export function StatsGrid() {
             suffix={dataMetrics.parentalLeave.suffix}
           />
         </div>
-        <div className="data-family-illustration" aria-hidden="true">
+        {/* <div className="data-family-illustration" aria-hidden="true">
           <span />
           <span />
           <i />
-        </div>
+        </div> */}
       </article>
 
       <article className="data-card data-card--benefits">
@@ -283,13 +283,22 @@ export function StatsGrid() {
 
       <article className="data-card data-card--roles">
         <h3>{t(dataMetrics.roles.label)}</h3>
-        <div className="data-role-grid">
+        <div className="data-role-bars">
           {dataMetrics.roles.items.map((item) => (
-            <div className="data-role" key={item.label.jp}>
-              <span>{t(item.label)}</span>
-              <strong>
-                <CountUp value={item.value} decimals={item.value % 1 === 0 ? 0 : 1} suffix="%" />
-              </strong>
+            <div
+              className={`data-role-bar${item.value === 63 ? " data-role-bar--primary" : ""}`}
+              key={item.label.jp}
+              style={{ "--value": `${item.value}%` } as CSSProperties}
+            >
+              <div className="data-role-bar__label">
+                <span>{t(item.label)}</span>
+                <strong>
+                  <CountUp value={item.value} decimals={item.value % 1 === 0 ? 0 : 1} suffix="%" />
+                </strong>
+              </div>
+              <div className="data-role-bar__track">
+                <span />
+              </div>
             </div>
           ))}
         </div>

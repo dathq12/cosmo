@@ -1483,7 +1483,7 @@ img {
 }
 
 .data-card__value--large {
-  font-size: clamp(5rem, 9vw, 5.1rem);
+  font-size: clamp(5rem, 9vw, 3.1rem);
 }
 
 .data-card--growth {
@@ -1581,7 +1581,7 @@ img {
   width: clamp(18px, 2vw, 24px);
   border-radius: 4px 4px 0 0;
   background: var(--data-yellow);
-  box-shadow: 0 12px 22px rgba(255, 211, 91, 0.24);
+  /* box-shadow: 0 12px 22px rgba(255, 211, 91, 0.24); */
 }
 
 .data-growth-chart span:nth-child(1) {
@@ -1644,7 +1644,7 @@ img {
   aspect-ratio: 1;
   border-radius: 50%;
   background: var(--data-blue);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+  /* box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28); */
 }
 
 .data-gender__legend {
@@ -1898,14 +1898,14 @@ img {
   gap: 8px;
   justify-items: center;
   padding-inline: 18px;
-  border-left: 1px solid rgba(1, 60, 88, 0.18);
+  /* border-left: 1px solid rgba(1, 60, 88, 0.18); */
   text-align: center;
 }
 
 .data-award span {
   color: var(--data-navy);
   border-color: rgba(1, 60, 88, 0.22);
-  background: rgba(1, 60, 88, 0.06);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .data-award:first-child {
@@ -3090,5 +3090,574 @@ img {
   *::after {
     animation: none !important;
     transition: none !important;
+  }
+}
+
+/* Premium data dashboard redesign */
+.section--data {
+  background: #f7f1e6;
+}
+
+.section--data::after {
+  display: none;
+}
+
+.data-heading {
+  max-width: 760px;
+  margin: 0 auto 34px;
+  text-align: center;
+}
+
+.data-heading__label {
+  margin: 0 0 10px;
+  color: #005d78;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.data-heading h2 {
+  margin: 0;
+  color: #1f2933;
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.data-heading h2 + p {
+  max-width: 620px;
+  margin: 18px auto 0;
+  color: rgba(31, 41, 51, 0.72);
+  font-size: clamp(0.98rem, 1.4vw, 1.12rem);
+  font-weight: 600;
+  line-height: 1.9;
+}
+
+.data-dashboard {
+  --data-primary: #005d78;
+  --data-accent: #f5c84c;
+  --data-text: #1f2933;
+  --data-cream: #fff8e7;
+  --data-surface: #ffffff;
+  --data-section: #f7f1e6;
+  --data-border: rgba(0, 93, 120, 0.12);
+  --data-border-strong: rgba(0, 93, 120, 0.2);
+  gap: 24px;
+}
+
+.data-card {
+  min-height: 230px;
+  padding: 32px;
+  border: 1px solid var(--data-border);
+  border-radius: 28px;
+  background: var(--data-surface);
+  /* box-shadow: 0 14px 34px rgba(0, 45, 65, 0.05); */
+}
+
+.data-card::before {
+  background: none;
+}
+
+.data-card h3 {
+  margin-bottom: 24px;
+  color: var(--data-text);
+  font-size: clamp(1.02rem, 1.2vw, 1.2rem);
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.data-card p,
+.section--data .data-card p,
+.section--data .data-role-bar span,
+.section--data .data-role-bar strong,
+.section--data .data-benefit > span,
+.section--data .data-award strong,
+.section--data .data-award p {
+  color: var(--data-text);
+}
+
+.data-card__value {
+  color: var(--data-text);
+  font-size: clamp(4.2rem, 7vw, 6.2rem);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.data-card__value--large {
+  font-size: clamp(6rem, 9vw, 8.4rem);
+}
+
+.data-card--growth,
+.data-card--gender {
+  min-height: 330px;
+  border-color: rgba(255, 255, 255, 0.16);
+  background: var(--data-primary);
+}
+
+.data-card--growth {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(220px, 0.82fr);
+  gap: 28px;
+  align-items: end;
+}
+
+.data-card--growth > div:first-child {
+  align-self: center;
+}
+
+.section--data .data-card--growth h3,
+.section--data .data-card--growth p,
+.section--data .data-card--growth .data-card__value,
+.section--data .data-card--gender h3,
+.section--data .data-card--gender .data-gender__legend span,
+.section--data .data-card--gender .data-gender__legend strong {
+  color: #ffffff;
+}
+
+.section--data .data-card--growth p {
+  color: rgba(255, 255, 255, 0.76);
+  font-weight: 700;
+}
+
+.data-card--rate,
+.data-card--benefits,
+.data-card--roles,
+.data-card--awards {
+  background: var(--data-cream);
+}
+
+.data-card--rate {
+  min-height: 250px;
+}
+
+.data-card--rate .data-card__value {
+  margin-top: 12px;
+  font-size: clamp(3.8rem, 5.8vw, 2.1rem);
+  font-weight: 700;
+}
+
+.data-growth-chart {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  min-width: 0;
+  min-height: 178px;
+  height: 178px;
+  align-self: end;
+  gap: 12px;
+  padding: 0 12px 8px 0;
+  opacity: 1;
+}
+
+.data-growth-chart span {
+  width: clamp(20px, 3vw, 34px);
+  border-radius: 10px 10px 3px 3px;
+  background: var(--data-accent);
+  box-shadow: none;
+}
+
+.data-growth-chart svg {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  stroke: #ffffff;
+  stroke-width: 4;
+  filter: none;
+  opacity: 0.94;
+}
+
+.data-gender {
+  grid-template-columns: minmax(150px, 190px) minmax(0, 1fr);
+  gap: 30px;
+  padding-top: 18px;
+}
+
+.data-gender__chart {
+  width: min(190px, 100%);
+  background: conic-gradient(var(--data-accent) 0 var(--women), rgba(255, 255, 255, 0.34) var(--women) 100%);
+}
+
+.data-gender__chart span {
+  width: 50%;
+  background: var(--data-primary);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+}
+
+.data-gender__legend {
+  gap: 16px;
+}
+
+.data-gender__legend div {
+  gap: 6px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.data-gender__legend span {
+  font-size: 0.9rem;
+  font-weight: 700;
+  opacity: 0.76;
+}
+
+.data-gender__legend strong {
+  font-size: 1.72rem;
+  font-weight: 800;
+}
+
+.data-people-illustration,
+.data-family-illustration {
+  right: 28px;
+  bottom: 28px;
+  width: 122px;
+  height: 96px;
+  border-bottom: 2px solid var(--data-border-strong);
+}
+
+.data-people-illustration span,
+.data-family-illustration span {
+  width: 36px;
+  height: 48px;
+  border: 2px solid var(--data-primary);
+  border-radius: 16px 16px 8px 8px;
+}
+
+.data-people-illustration span::before,
+.data-family-illustration span::before {
+  top: -29px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--data-primary);
+  background: var(--data-cream);
+}
+
+.data-people-illustration i,
+.data-family-illustration i {
+  top: 33px;
+  width: 44px;
+  height: 44px;
+  background: var(--data-primary);
+}
+
+.data-people-illustration i::before,
+.data-family-illustration i::before {
+  inset: 12px;
+  border-color: var(--data-cream);
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+
+.data-benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.data-benefit {
+  min-height: auto;
+  display: inline-grid;
+  grid-template-columns: auto 1fr;
+  place-items: center start;
+  gap: 10px;
+  padding: 12px 14px;
+  /* border: 1px solid var(--data-border); */
+  border-radius: 999px;
+  background: rgba(245, 200, 76, 0.28);
+  text-align: left;
+}
+
+.data-benefit__icon,
+.data-award span,
+.data-awards__trophy {
+  /* border: 1px solid var(--data-border-strong); */
+  color: var(--data-primary);
+  /* background: rgba(0, 93, 120, 0.06); */
+}
+
+.data-benefit__icon {
+  width: 34px;
+  height: 34px;
+}
+
+.data-benefit__icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.data-benefit > span:not(.data-benefit__icon) {
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.data-card--roles {
+  padding-bottom: 34px;
+}
+
+.data-role-grid {
+  display: none;
+}
+
+.data-role-bars {
+  display: grid;
+  gap: 14px;
+}
+
+.data-role-bar {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.32fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+}
+
+.data-role-bar__label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.data-role-bar__label span {
+  color: var(--data-text);
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.data-role-bar__label strong {
+  color: var(--data-primary);
+  font-size: 1.08rem;
+  font-weight: 900;
+}
+
+.data-role-bar__track {
+  height: 13px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(0, 93, 120, 0.1);
+}
+
+.data-role-bar__track span {
+  display: block;
+  width: var(--value);
+  height: 100%;
+  border-radius: inherit;
+  background: var(--data-primary);
+}
+
+.data-role-bar--primary .data-role-bar__label span,
+.data-role-bar--primary .data-role-bar__label strong {
+  color: var(--data-text);
+  font-size: 1.1rem;
+}
+
+.data-role-bar--primary .data-role-bar__track {
+  height: 18px;
+  background: rgba(245, 200, 76, 0.28);
+}
+
+.data-role-bar--primary .data-role-bar__track span {
+  background: var(--data-accent);
+}
+
+.data-card--awards {
+  grid-template-columns: minmax(260px, 0.75fr) minmax(0, 1.45fr);
+  gap: 30px;
+}
+
+.data-awards__intro {
+  min-height: 170px;
+  align-items: center;
+  gap: 22px;
+  padding-right: 30px;
+  border-right: 1px solid var(--data-border);
+}
+
+.data-awards__trophy {
+  width: 78px;
+  height: 78px;
+  flex: 0 0 auto;
+}
+
+.data-awards__trophy svg {
+  width: 40px;
+  height: 40px;
+}
+
+.data-awards__intro h3 {
+  margin-bottom: 10px;
+}
+
+.data-awards__intro p {
+  max-width: 390px;
+  color: rgba(31, 41, 51, 0.7);
+  font-weight: 600;
+}
+
+.data-awards__items {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.data-award {
+  min-height: 142px;
+  align-content: start;
+  gap: 10px;
+  padding: 18px 14px;
+  /* border: 1px solid var(--data-border); */
+  border-radius: 20px;
+  background: rgba(245, 200, 76, 0.28);
+}
+
+.data-award span {
+  width: 42px;
+  height: 42px;
+}
+
+.data-award svg {
+  width: 22px;
+  height: 22px;
+}
+
+.data-award strong {
+  font-size: 0.98rem;
+  font-weight: 900;
+}
+
+.data-award p {
+  color: rgba(31, 41, 51, 0.68);
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+@media (max-width: 980px) {
+  .data-dashboard {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .data-card--growth,
+  .data-card--gender,
+  .data-card--roles,
+  .data-card--awards {
+    grid-column: 1 / -1;
+  }
+
+  .data-card--rate,
+  .data-card--benefits {
+    grid-column: span 2;
+  }
+
+  .data-card--growth {
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.72fr);
+  }
+
+  .data-card--awards {
+    grid-template-columns: 1fr;
+  }
+
+  .data-awards__intro {
+    min-height: auto;
+    padding-right: 0;
+    padding-bottom: 24px;
+    border-right: 0;
+    border-bottom: 1px solid var(--data-border);
+  }
+}
+
+@media (max-width: 720px) {
+  .data-heading {
+    margin-bottom: 24px;
+    text-align: left;
+  }
+
+  .data-dashboard {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .data-card,
+  .data-card--growth,
+  .data-card--gender,
+  .data-card--rate,
+  .data-card--benefits,
+  .data-card--roles,
+  .data-card--awards {
+    grid-column: 1 / -1;
+    min-height: auto;
+    padding: 24px;
+    border-radius: 24px;
+  }
+
+  .data-card--growth {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .data-card__value--large {
+    font-size: clamp(5rem, 24vw, 6.3rem);
+  }
+
+  .data-growth-chart {
+    height: 136px;
+    min-height: 136px;
+  }
+
+  .data-gender {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .data-gender__chart {
+    width: min(180px, 64vw);
+  }
+
+  .data-card--rate .data-card__value {
+    max-width: none;
+    font-size: clamp(3.6rem, 18vw, 4.7rem);
+  }
+
+  .data-people-illustration,
+  .data-family-illustration {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-top: 24px;
+  }
+
+  .data-benefits {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .data-role-bars {
+    gap: 18px;
+  }
+
+  .data-role-bar {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .data-awards__intro {
+    display: grid;
+  }
+
+  .data-awards__items {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .data-award,
+  .data-award:first-child {
+    grid-template-columns: auto 1fr;
+    justify-items: start;
+    align-items: center;
+    min-height: auto;
+    text-align: left;
+    border: 1px solid var(--data-border);
+  }
+
+  .data-award p {
+    grid-column: 2;
   }
 }
