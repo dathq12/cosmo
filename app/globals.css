@@ -2479,22 +2479,12 @@ img {
     width: 380px;
   }
 
-  .hero-visual__panel--top {
-    right: 5%;
-    top: 13%;
-    width: 350px;
-  }
-
-  .hero-visual__panel--bottom {
-    right: 9%;
-    bottom: 15%;
-    width: 280px;
-  }
-
-  .hero-visual__panel--side {
-    left: 5%;
-    bottom: 8%;
-    width: 200px;
+  .hero-visual__panel--top,
+  .hero-visual__panel--feature,
+  .hero-visual__panel--bottom,
+  .hero-visual__panel--side,
+  .hero-visual__strip {
+    display: none;
   }
 
   .hero__content,
