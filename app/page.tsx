@@ -3,6 +3,7 @@
 import Image from "next/image";
 
 import { CompanyFit } from "@/components/CompanyFit";
+import { CompanyNetworkDiagram } from "@/components/CompanyNetworkDiagram";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -12,100 +13,17 @@ import { ButtonLink } from "@/components/ui/ButtonLink";
 import { HeroParallaxText } from "@/components/ui/HeroParallaxText";
 import { useLanguage } from "@/components/ui/LanguageProvider";
 import { Reveal } from "@/components/ui/Reveal";
-import { SnapScrollController } from "@/components/ui/SnapScrollController";
 import { ScrollSection } from "@/components/ui/ScrollSection";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 import {
   companies,
   culturePillars,
-  groupNetwork,
   homeText,
   interviews,
   jobs,
   storySteps,
   uiText
 } from "@/data/site-data";
-
-function NetworkLineIcon({ name }: { name: string }) {
-  const common = {
-    fill: "none",
-    stroke: "currentColor",
-    strokeLinecap: "round" as const,
-    strokeLinejoin: "round" as const,
-    strokeWidth: 1.8
-  };
-
-  if (name === "holding") {
-    return (
-      <svg viewBox="0 0 48 48" aria-hidden="true">
-        <path {...common} d="M10 40h28" />
-        <path {...common} d="M16 40V16l8-4 8 4v24" />
-        <path {...common} d="M8 40V24l8-4" />
-        <path {...common} d="M40 40V24l-8-4" />
-        <path {...common} d="M22 40V28h4v12" />
-        <path {...common} d="M21 18v5" />
-        <path {...common} d="M27 18v5" />
-      </svg>
-    );
-  }
-
-  if (name === "cosmo") {
-    return (
-      <svg viewBox="0 0 48 48" aria-hidden="true">
-        <path {...common} d="m24 8 15 8-15 8-15-8 15-8Z" />
-        <path {...common} d="M9 16v16l15 8 15-8V16" />
-        <path {...common} d="M24 24v16" />
-        <path {...common} d="m16 12 15 8" />
-      </svg>
-    );
-  }
-
-  if (name === "holistic-cubes") {
-    return (
-      <svg viewBox="0 0 48 48" aria-hidden="true">
-        <path {...common} d="M19 10h10" />
-        <path {...common} d="M18 14h12v22a6 6 0 0 1-12 0V14Z" />
-        <path {...common} d="M21 22h6" />
-        <path {...common} d="M21 30h6" />
-        <path {...common} d="M24 7v3" />
-      </svg>
-    );
-  }
-
-  if (name === "reiso") {
-    return (
-      <svg viewBox="0 0 48 48" aria-hidden="true">
-        <path {...common} d="M20 8h8" />
-        <path {...common} d="M21 8v12L12 36a4 4 0 0 0 3.5 6h17a4 4 0 0 0 3.5-6l-9-16V8" />
-        <path {...common} d="M17 32h14" />
-        <path {...common} d="M20 36c2.4-2 5.6-2 8 0" />
-        <path {...common} d="M34 15h4" />
-        <path {...common} d="M36 13v4" />
-      </svg>
-    );
-  }
-
-  if (name === "group-related") {
-    return (
-      <svg viewBox="0 0 48 48" aria-hidden="true">
-        <path {...common} d="M24 21a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z" />
-        <path {...common} d="M13 38c1.4-7 5.2-11 11-11s9.6 4 11 11" />
-        <path {...common} d="M11 23a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" />
-        <path {...common} d="M4 37c.8-5.4 3.6-8.6 8.2-9" />
-        <path {...common} d="M37 23a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" />
-        <path {...common} d="M35.8 28c4.6.4 7.4 3.6 8.2 9" />
-      </svg>
-    );
-  }
-
-  return (
-    <svg viewBox="0 0 48 48" aria-hidden="true">
-      <path {...common} d="m12 29 12-12 12 12" />
-      <path {...common} d="m16 33 8-8 8 8" />
-      <path {...common} d="m20 37 4-4 4 4" />
-    </svg>
-  );
-}
 
 export default function HomePage() {
   const { t } = useLanguage();
@@ -115,38 +33,40 @@ export default function HomePage() {
     <>
       <Header />
       <main>
-        <SnapScrollController />
-        <section className="hero" data-snap-section="true">
-          <HeroVisual />
-          <div className="hero__overlay" />
-          <div className="container hero__content">
-            <HeroParallaxText>
-              <p className="eyebrow eyebrow--light">{t(homeText.heroEyebrow)}</p>
-              <h1>
-                {t(homeText.heroTitle)
-                  .split("\n")
-                  .map((line) => (
-                    <span key={line}>
-                      {line}
-                      <br />
-                    </span>
-                  ))}
-              </h1>
-              <p className="hero__lead">{t(homeText.heroLead)}</p>
-              <div className="hero-actions">
-                <ButtonLink href="#recruit">{t(uiText.common.jobs)}</ButtonLink>
-                <ButtonLink href="#company" variant="secondary">
-                  {t(homeText.heroSecondary)}
-                </ButtonLink>
-              </div>
-            </HeroParallaxText>
-            {/* <Reveal delay={0.12} className="hero__aside">
-              <div className="hero-card">
-                <span>FIND YOUR PLACE</span>
-                <p>{t(homeText.heroCard)}</p>
-              </div>
-              <div className="scroll-indicator">SCROLL</div>
-            </Reveal> */}
+        <section className="hero">
+          <video src="/assets/hero-kv.mp4" autoPlay muted loop style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute' }} />
+          {/* <HeroVisual /> */}
+          {/* <div className="hero__overlay" /> */}
+          <div className="hero__box">
+            <div className="container hero__content">
+              <HeroParallaxText>
+                <p className="eyebrow eyebrow--light">{t(homeText.heroEyebrow)}</p>
+                <h1>
+                  {t(homeText.heroTitle)
+                    .split("\n")
+                    .map((line) => (
+                      <span key={line}>
+                        {line}
+                        <br />
+                      </span>
+                    ))}
+                </h1>
+                <p className="hero__lead">{t(homeText.heroLead)}</p>
+                <div className="hero-actions">
+                  <ButtonLink href="#recruit">{t(uiText.common.jobs)}</ButtonLink>
+                  <ButtonLink href="#company" variant="secondary">
+                    {t(homeText.heroSecondary)}
+                  </ButtonLink>
+                </div>
+              </HeroParallaxText>
+              {/* <Reveal delay={0.12} className="hero__aside">
+                <div className="hero-card">
+                  <span>FIND YOUR PLACE</span>
+                  <p>{t(homeText.heroCard)}</p>
+                </div>
+                <div className="scroll-indicator">SCROLL</div>
+              </Reveal> */}
+            </div>
           </div>
         </section>
 
@@ -193,42 +113,11 @@ export default function HomePage() {
               <p>{t(homeText.companyLead)}</p>
               <span aria-hidden="true" className="company-network__heading-line" />
             </Reveal>
-            <Reveal delay={0.08} direction="up" className="company-network__map">
-              <svg
-                aria-hidden="true"
-                className="company-network__links"
-                preserveAspectRatio="none"
-                viewBox="0 0 1240 680"
-              >
-                <line x1="620" x2="202" y1="340" y2="154" />
-                <line x1="620" x2="202" y1="340" y2="428" />
-                <line x1="620" x2="1038" y1="340" y2="154" />
-                <line x1="620" x2="1038" y1="340" y2="428" />
-                <line x1="620" x2="620" y1="340" y2="584" />
-              </svg>
-              <div className="company-network__center">
-                <div className="company-network__icon company-network__icon--center">
-                  <NetworkLineIcon name="holding" />
-                </div>
-                <h3>{t(groupNetwork.center.name)}</h3>
-                <p>{t(groupNetwork.center.body)}</p>
-              </div>
-              {groupNetwork.nodes.map((node) => (
-                <div
-                  key={node.id}
-                  className={`company-network__node company-network__node--${node.position}`}
-                >
-                  <div className="company-network__icon">
-                    <NetworkLineIcon name={node.id} />
-                  </div>
-                  <div>
-                    <h3>{t(node.name)}</h3>
-                    <p>{t(node.body)}</p>
-                  </div>
-                </div>
-              ))}
-            </Reveal>
-            <Reveal delay={0.16} direction="up" className="company-network__caption">
+            <CompanyNetworkDiagram />
+            {/* Delay kept in sync with CompanyNetworkDiagram's hub/line/node
+                reveal sequence (finishes ~1.78s) so the caption only shows
+                once every item inside .company-network__map has appeared. */}
+            <Reveal delay={1.85} direction="up" className="company-network__caption">
               <p>{t(homeText.companyBody)}</p>
             </Reveal>
           </div>

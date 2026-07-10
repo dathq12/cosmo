@@ -15,11 +15,23 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const lastScrollY = useRef(0);
   const ticking = useRef(false);
+  const colorSwapTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { t } = useLanguage();
 
   useEffect(() => {
+    const TOP_THRESHOLD = 32;
+    const DELTA_THRESHOLD = 4;
+    const HIDE_TRANSITION_MS = 460;
+
     lastScrollY.current = window.scrollY;
-    setScrolled(window.scrollY > 32);
+    setScrolled(window.scrollY > TOP_THRESHOLD);
+
+    const clearColorSwap = () => {
+      if (colorSwapTimer.current) {
+        clearTimeout(colorSwapTimer.current);
+        colorSwapTimer.current = null;
+      }
+    };
 
     const onScroll = () => {
       if (ticking.current) {
@@ -30,14 +42,23 @@ export function Header() {
       window.requestAnimationFrame(() => {
         const currentScrollY = window.scrollY;
         const scrollDelta = currentScrollY - lastScrollY.current;
+        const pastTop = currentScrollY > TOP_THRESHOLD;
 
-        setScrolled(currentScrollY > 32);
-
-        if (currentScrollY <= 32) {
+        if (!pastTop) {
+          clearColorSwap();
           setHidden(false);
-        } else if (scrollDelta > 6 && currentScrollY > 96) {
+          setScrolled(false);
+        } else if (scrollDelta > DELTA_THRESHOLD) {
+          // Hide first; swap to the scrolled background only once it's fully
+          // off-screen so the color change is never seen mid-slide.
           setHidden(true);
-        } else if (scrollDelta < -6) {
+          clearColorSwap();
+          colorSwapTimer.current = setTimeout(() => setScrolled(true), HIDE_TRANSITION_MS);
+        } else if (scrollDelta < -DELTA_THRESHOLD) {
+          // Reveal with the scrolled background already applied so nothing
+          // visibly recolors while it slides back into view.
+          clearColorSwap();
+          setScrolled(true);
           setHidden(false);
         }
 
@@ -47,7 +68,10 @@ export function Header() {
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      clearColorSwap();
+    };
   }, []);
 
   useEffect(() => {
@@ -60,11 +84,11 @@ export function Header() {
   return (
     <>
       <header
-        className={`site-header ${scrolled ? "site-header--scrolled" : ""} ${
+        className={`site-header  ${scrolled ? "site-header--scrolled" : ""} ${
           hidden && !open ? "site-header--hidden" : ""
         }`}
       >
-        <Link href="/" className="site-header__brand">
+        <Link href="/" className={`site-header__brand ${open ? "logo--black" : ""}`}>
           <CosmoLogo compact />
         </Link>
         <nav className="site-header__nav" aria-label="Primary">

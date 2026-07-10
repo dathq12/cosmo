@@ -282,7 +282,7 @@ export const companies: Company[] = [
     name: "COSMO",
     label: { jp: "株式会社コスモ", en: "Cosmo Co., Ltd." },
     englishTag: "Salon Partner",
-    accent: "#b99a5b",
+    accent: "#fff",
     softAccent: "rgba(216, 136, 112, 0.14)",
     tagline: {
       jp: "美容室のいちばん近くで、成長を支える。",
@@ -323,7 +323,7 @@ export const companies: Company[] = [
     name: "CREATE",
     label: { jp: "株式会社CREATE", en: "CREATE Co., Ltd." },
     englishTag: "Product Engineering",
-    accent: "#b99a5b",
+    accent: "#fff",
     softAccent: "rgba(79, 103, 136, 0.14)",
     tagline: {
       jp: "美しさを、技術でかたちにする。",
@@ -364,7 +364,7 @@ export const companies: Company[] = [
     name: "HOLISTIC CURES",
     label: { jp: "ホリスティックキュアーズ", en: "Holistic Cures" },
     englishTag: "Premium Devices",
-    accent: "#b28e6d",
+    accent: "#3397AB",
     softAccent: "rgba(178, 142, 109, 0.16)",
     tagline: {
       jp: "品質と感性で、毎日の美しさを磨く。",

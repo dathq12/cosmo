@@ -42,7 +42,7 @@ export function JobFilter() {
           return (
             <article className="job-card" key={job.id}>
               <div className="job-card__meta">
-                <span style={{ color: companyMeta?.accent }}>{companyMeta?.name}</span>
+                <span style={{color: "#3397AB"}}>{companyMeta?.name}</span>
                 <span>{t(job.location)}</span>
                 <span>{t(job.type)}</span>
               </div>

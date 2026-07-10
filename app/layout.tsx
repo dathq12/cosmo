@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_JP, Playfair_Display } from "next/font/google";
 
 import { LanguageProvider } from "@/components/ui/LanguageProvider";
+import { SmoothScroll } from "@/components/ui/SmoothScroll";
 import "./globals.css";
 
 const notoSansJp = Noto_Sans_JP({
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={`${notoSansJp.variable} ${playfair.variable}`}>
+        <SmoothScroll />
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>

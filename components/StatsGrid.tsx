@@ -1,6 +1,7 @@
 "use client";
 
-import type { CSSProperties } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { animate, motion, useInView, useReducedMotion } from "framer-motion";
 
 import { dataMetrics } from "@/data/site-data";
 import { useLanguage } from "@/components/ui/LanguageProvider";
@@ -37,11 +38,117 @@ function CountUp({
   suffix?: string;
   decimals?: number;
 }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const reduceMotion = useReducedMotion();
+  const [display, setDisplay] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    if (reduceMotion) {
+      setDisplay(value);
+      return;
+    }
+
+    const controls = animate(0, value, {
+      duration: 1.4,
+      ease: [0.22, 1, 0.36, 1],
+      onUpdate: setDisplay
+    });
+
+    return () => controls.stop();
+  }, [isInView, reduceMotion, value]);
+
   return (
-    <span>
-      {formatNumber(value, decimals)}
+    <span ref={ref}>
+      {formatNumber(display, decimals)}
       {suffix}
     </span>
+  );
+}
+
+type GenderItem = (typeof dataMetrics)["gender"]["items"][number];
+
+function GenderChart({ women, men }: { women: GenderItem; men: GenderItem }) {
+  const { t } = useLanguage();
+  const chartRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(chartRef, { once: true, amount: 0.4 });
+  const reduceMotion = useReducedMotion();
+  const [menValue, setMenValue] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    if (reduceMotion) {
+      setMenValue(men.value);
+      return;
+    }
+
+    const controls = animate(0, men.value, {
+      duration: 1.4,
+      ease: [0.22, 1, 0.36, 1],
+      onUpdate: setMenValue
+    });
+
+    return () => controls.stop();
+  }, [isInView, reduceMotion, men.value]);
+
+  const womenValue = Math.max(0, 100 - menValue);
+
+  return (
+    <div className="data-gender">
+      <div
+        ref={chartRef}
+        aria-hidden="true"
+        className="data-gender__chart"
+        style={{ "--men": `${menValue}%` } as CSSProperties}
+      >
+        <span />
+      </div>
+      <div className="data-gender__legend">
+        <div>
+          <span>{t(women.label)}</span>
+          <strong>{formatNumber(womenValue, 1)}%</strong>
+        </div>
+        <div>
+          <span>{t(men.label)}</span>
+          <strong className="is-cool">{formatNumber(menValue, 1)}%</strong>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function GrowthChart() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { once: true, amount: 0.4 });
+  const reduceMotion = useReducedMotion();
+
+  return (
+    <div className="data-growth-chart" aria-hidden="true" ref={containerRef}>
+      <motion.svg
+        viewBox="0 0 280 130"
+        preserveAspectRatio="xMidYMax meet"
+        style={{ transformOrigin: "bottom" }}
+        initial={reduceMotion ? { scaleY: 1, opacity: 1 } : { scaleY: 0.32, opacity: 0 }}
+        animate={isInView ? { scaleY: 1, opacity: 1 } : undefined}
+        transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <path
+          className="data-growth-chart__wave data-growth-chart__wave--sage"
+          d="M18 128C36 106 62 92 92 94C120 96 140 88 154 74C168 58 184 60 200 74C216 88 230 84 242 62C254 42 262 30 266 24V128H18Z"
+        />
+        <path
+          className="data-growth-chart__wave data-growth-chart__wave--teal"
+          d="M18 128C42 118 66 108 96 106C124 104 144 92 158 68C170 48 184 38 198 42C212 46 220 62 234 66C248 70 258 44 266 30V128H18Z"
+        />
+        <path
+          className="data-growth-chart__wave data-growth-chart__wave--amber"
+          d="M122 128C138 118 150 94 162 62C174 28 186 10 198 14C210 18 216 56 228 64C240 72 246 32 256 14C262 6 265 18 266 28V128H122Z"
+        />
+      </motion.svg>
+    </div>
   );
 }
 
@@ -200,50 +307,12 @@ export function StatsGrid() {
           </div>
           <p>{t(dataMetrics.growth.note)}</p>
         </div>
-        <div className="data-growth-chart" aria-hidden="true">
-          <svg viewBox="0 0 280 130" preserveAspectRatio="xMidYMax meet">
-            <path
-              className="data-growth-chart__wave data-growth-chart__wave--sage"
-              d="M18 128C36 106 62 92 92 94C120 96 140 88 154 74C168 58 184 60 200 74C216 88 230 84 242 62C254 42 262 30 266 24V128H18Z"
-            />
-            <path
-              className="data-growth-chart__wave data-growth-chart__wave--teal"
-              d="M18 128C42 118 66 108 96 106C124 104 144 92 158 68C170 48 184 38 198 42C212 46 220 62 234 66C248 70 258 44 266 30V128H18Z"
-            />
-
-            <path
-              className="data-growth-chart__wave data-growth-chart__wave--amber"
-              d="M122 128C138 118 150 94 162 62C174 28 186 10 198 14C210 18 216 56 228 64C240 72 246 32 256 14C262 6 265 18 266 28V128H122Z"
-            />
-          </svg>
-        </div>
+        <GrowthChart />
       </article>
 
       <article className="data-card data-card--gender">
         <h3>{t(dataMetrics.gender.label)}</h3>
-        <div className="data-gender">
-          <div
-            aria-hidden="true"
-            className="data-gender__chart"
-            style={{ "--women": `${women.value}%` } as CSSProperties}
-          >
-            <span />
-          </div>
-          <div className="data-gender__legend">
-            <div>
-              <span>{t(women.label)}</span>
-              <strong>
-                <CountUp value={women.value} decimals={1} suffix="%" />
-              </strong>
-            </div>
-            <div>
-              <span>{t(men.label)}</span>
-              <strong className="is-cool">
-                <CountUp value={men.value} decimals={1} suffix="%" />
-              </strong>
-            </div>
-          </div>
-        </div>
+        <GenderChart women={women} men={men} />
       </article>
 
       <article className="data-card data-card--rate data-card--marriage">
