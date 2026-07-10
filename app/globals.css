@@ -2671,7 +2671,7 @@ img {
   .hero__content {
     transform: none;
     gap: 22px;
-    padding-bottom: 42px;
+    padding-bottom: 100px;
   }
 
   .hero h1 {
