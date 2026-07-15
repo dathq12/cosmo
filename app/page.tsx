@@ -3,6 +3,7 @@
 import Image from "next/image";
 
 import { CompanyFit } from "@/components/CompanyFit";
+import { CompanyGroupShowcase } from "@/components/CompanyGroupShowcase";
 import { CompanyNetworkDiagram } from "@/components/CompanyNetworkDiagram";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { Footer } from "@/components/Footer";
@@ -24,6 +25,7 @@ import {
   storySteps,
   uiText
 } from "@/data/site-data";
+import { JobFilter } from "@/components/JobFilter";
 
 const ceoMessage = {
   title: {
@@ -48,6 +50,56 @@ const ceoMessage = {
   role: { jp: "代表取締役", en: "President & CEO" },
   name: { jp: "貝塚 弘幸", en: "Hiroyuki Kaizuka" }
 };
+
+const workEnv = {
+  title: {
+    jp: "心地よく働き、\n自分らしく成長する。",
+    en: "Work comfortably.\nGrow in your own way."
+  },
+  body: {
+    jp: "一人ひとりが安心して挑戦を続けられるように。COSMOでは、働く場所・制度・チームのすべてから、成長を支える環境を整えています。",
+    en: "So that everyone can keep challenging themselves with peace of mind, COSMO shapes every part of the workplace — spaces, systems, and teams — to support growth."
+  },
+  sideLabel: "A PLACE TO GROW",
+  cta: {
+    jp: "働く環境・制度を詳しく見る",
+    en: "See our workplace & benefits in detail"
+  },
+  watermark: "ENVIRONMENT"
+};
+
+const workEnvItems = [
+  {
+    id: "connect",
+    index: "01",
+    label: { jp: "つながる", en: "Connect" },
+    title: { jp: "相談しやすく、\n支え合えるチーム", en: "A team that talks openly\nand supports each other" },
+    body: {
+      jp: "部署や役職を越えて声をかけ合い、困ったときに自然と支え合える関係を大切にしています。",
+      en: "We value relationships that cross departments and titles, where people naturally look out for one another when something's hard."
+    }
+  },
+  {
+    id: "grow",
+    index: "02",
+    label: { jp: "成長する", en: "Grow" },
+    title: { jp: "挑戦を後押しする\n育成制度", en: "Training that backs\nyour challenges" },
+    body: {
+      jp: "研修や日々の実践を通じて、一人ひとりの目標に合わせた成長をサポートします。",
+      en: "Through training and everyday practice, we support growth tailored to each person's own goals."
+    }
+  },
+  {
+    id: "sustain",
+    index: "03",
+    label: { jp: "続けられる", en: "Sustain" },
+    title: { jp: "ライフステージに\n寄り添う制度", en: "Systems that adapt\nto your life stage" },
+    body: {
+      jp: "仕事と暮らしの変化に向き合い、長く安心して働ける制度と環境を整えています。",
+      en: "We keep pace with changes in work and life, building systems and an environment people can stay with for the long run."
+    }
+  }
+];
 
 const recruitTypeCards = [
   {
@@ -157,7 +209,7 @@ export default function HomePage() {
           </div>
         </ScrollSection>
 
-        <ScrollSection className="section section--flow section--flow-company section--network" id="company">
+        {/* <ScrollSection className="section section--flow section--flow-company section--network" id="company">
           <div className="container company-network">
             <Reveal direction="down" className="company-network__heading">
               <p className="eyebrow">COSMO GROUP</p>
@@ -165,16 +217,22 @@ export default function HomePage() {
               <p>{t(homeText.companyLead)}</p>
               <span aria-hidden="true" className="company-network__heading-line" />
             </Reveal>
-            <CompanyNetworkDiagram />
+            <CompanyNetworkDiagram /> */}
             {/* Delay kept in sync with CompanyNetworkDiagram's hub/line/node
                 reveal sequence (finishes ~1.78s) so the caption only shows
                 once every item inside .company-network__map has appeared. */}
-            <Reveal delay={1.85} direction="up" className="company-network__caption">
+            {/* <Reveal delay={1.85} direction="up" className="company-network__caption">
               <p>{t(homeText.companyBody)}</p>
             </Reveal>
           </div>
+        </ScrollSection> */}
+
+        <ScrollSection className="section section--dark" id="group-network">
+          <div className="container">
+            <CompanyGroupShowcase />
+          </div>
         </ScrollSection>
-{/* 
+{/*
         <ScrollSection className="section">
           <div className="container">
             <Reveal direction="right">
@@ -257,7 +315,7 @@ export default function HomePage() {
           </div>
         </ScrollSection>
 
-        <ScrollSection className="section section--flow section--flow-data section--data" id="data">
+        {/* <ScrollSection className="section section--flow section--flow-data section--data" id="data">
           <div className="container">
             <Reveal direction="down">
               <div className="data-heading">
@@ -268,6 +326,141 @@ export default function HomePage() {
             </Reveal>
             <Reveal delay={0.08} direction="up">
               <StatsGrid />
+            </Reveal>
+          </div>
+        </ScrollSection> */}
+
+        <ScrollSection className="section section--flow section--flow-data" id="data">
+          <div className="container work-env">
+            <div className="work-env__top">
+              <Reveal direction="down" className="work-env__intro">
+                <p className="eyebrow">WORK ENVIRONMENT</p>
+                <h2>{t(workEnv.title)}</h2>
+                <p>{t(workEnv.body)}</p>
+                <a href="#" className="work-env__side" aria-hidden="true">
+                  {workEnv.sideLabel}
+                </a>
+              </Reveal>
+              <Reveal direction="right" delay={0.1} className="work-env__banner">
+                <Image
+                  src="/assets/environment.png"
+                  alt={t(workEnv.title)}
+                  fill
+                  sizes="(max-width: 1080px) 100vw, 68vw"
+                />
+              </Reveal>
+            </div>
+
+            <div className="work-env__grid">
+              {workEnvItems.map((item, index) => (
+                <Reveal
+                  key={item.id}
+                  delay={index * 0.08}
+                  direction="up"
+                  className="work-env__item"
+                >
+                  <div className="work-env__item-head">
+                    <span className="work-env__item-index">{item.index}</span>
+                    <span className="work-env__item-label">{t(item.label)}</span>
+                  </div>
+                  <div className="work-env__item-top">
+                  <div className="work-env__item-icon" aria-hidden="true">
+                    {item.id === "connect" && (
+                      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="11" r="2.8" stroke="currentColor" strokeWidth="1.8" />
+                        <circle cx="28" cy="11" r="2.8" stroke="currentColor" strokeWidth="1.8" />
+                        <path
+                          d="M8 33V23c0-4.5 2-7.5 5-8.9 2-1 4.4-2.4 7-5.1"
+                          stroke="currentColor"
+                          strokeWidth="1.8"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M32 33V23c0-4.5-2-7.5-5-8.9-2-1-4.4-2.4-7-5.1"
+                          stroke="currentColor"
+                          strokeWidth="1.8"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M16 2.5 17.5 6M20 1.5V5.2M24 2.5 22.5 6"
+                          stroke="currentColor"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                    )}
+                    {item.id === "grow" && (
+                      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M6 9c5-2.6 10-2.6 14 0v23c-4-2.6-9-2.6-14 0V9Z"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M34 9c-5-2.6-10-2.6-14 0v23c4-2.6 9-2.6 14 0V9Z"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M22.5 14.5h6M22.5 19h6M22.5 23.5h4"
+                          stroke="currentColor"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
+                        />
+                        <path
+                          d="M27 5.5 33 3l2.5 2.5L33 11.5l-6 2.5-2.5-2.5L27 5.5Z"
+                          stroke="currentColor"
+                          strokeWidth="1.7"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    )}
+                    {item.id === "sustain" && (
+                      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M20 20 13.5 13c-2-2-1.4-5 1-6.2 2-1 4.3-.3 5.5 1.6 1.2-1.9 3.5-2.6 5.5-1.6 2.4 1.2 3 4.2 1 6.2L20 20Z"
+                          stroke="currentColor"
+                          strokeWidth="1.8"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M4.5 30c6 3 10.5 3.4 15.5 2.3 4.5-1 8-2.8 10.6-5.6.9-1 .8-2.3-.2-3.1-.9-.7-2.2-.6-3.1.2l-4 3.6"
+                          stroke="currentColor"
+                          strokeWidth="1.8"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M15.5 25.5c2.2.9 5 1.1 7.6.5 1.3-.3 2.5-.8 2.5-.8"
+                          stroke="currentColor"
+                          strokeWidth="1.8"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                    )}
+                  </div>
+                  <h3>{t(item.title)}</h3>
+                  </div>
+                  <p>{t(item.body)}</p>
+                </Reveal>
+              ))}
+            </div>
+
+            <Reveal direction="up" delay={0.3} className="work-env__cta">
+              <a href="#none" className="button button--secondary" aria-hidden="false">
+                <span>{t(workEnv.cta)}</span>
+                <span aria-hidden="true" className="button__arrow">
+                  →
+                </span>
+              </a>
+            </Reveal>
+
+            <Reveal direction="up" delay={0.36} className="work-env__watermark">
+              {workEnv.watermark}
             </Reveal>
           </div>
         </ScrollSection>
@@ -464,6 +657,19 @@ export default function HomePage() {
               ))}
             </div>
           </Reveal>
+        </ScrollSection>
+
+        <ScrollSection className="section">
+          <div className="container">
+            <Reveal direction="down">
+              <SectionIntro
+                label="JOB LIST"
+                title={t(uiText.jobsPage.introTitle)}
+                body={t(uiText.jobsPage.introBody)}
+              />
+            </Reveal>
+            <JobFilter animated />
+          </div>
         </ScrollSection>
 
         <ScrollSection className="section" id="faq">
