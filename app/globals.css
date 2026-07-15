@@ -10,7 +10,7 @@
   --radius: 28px;
   --radius-sm: 20px;
   --shadow: 0 24px 80px rgba(36, 28, 18, 0.08);
-  --container: min(1340px, calc(100vw - 48px));
+  --container: min(1240px, calc(100vw - 48px));
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
