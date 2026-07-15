@@ -25,6 +25,30 @@ import {
   uiText
 } from "@/data/site-data";
 
+const ceoMessage = {
+  title: {
+    jp: "新しい価値を生み出す仲間へ",
+    en: "To Those Who Create New Value With Us"
+  },
+  paragraphs: [
+    {
+      jp: "かつて、美容ビジネスの基本は「問題」や「悩み」を探すことでした。業界に参入したばかりで競争力がなかった私たちは、だからこそ「問題解決」という従来の常識を捨てることの重要さに気付くことができました。むしろ、「ワクワクする未来」だけに目を向けて、これまでにない新しい価値をお客様に提供しようと、心をひとつにした。この大きな転換が、現在の私たちの原点となりました。",
+      en: "The basics of the beauty business used to be about finding \"problems\" and \"worries.\" As newcomers with little competitive strength, that was exactly what let us realize how important it was to let go of the conventional wisdom of \"problem solving.\" Instead, we united around a single idea: focus only on an exciting future, and offer our customers a kind of value that didn't exist before. That shift became the starting point we still stand on today."
+    },
+    {
+      jp: "私たちの主力商品「ホリスティックキュアスタイリングシリーズ」は現在国内美容業界が注目している「健康」や「内面美」にいち早く目を向けた象徴的なヒット商品です。",
+      en: "Our flagship product, the \"Holistic Cure Styling Series,\" is a symbolic hit that anticipated the \"health\" and \"inner beauty\" now drawing attention across Japan's beauty industry."
+    },
+    {
+      jp: "徹底的な未来志向こそが、業界に新たな風を呼び込む原動力だと、私たちは確信しています。",
+      en: "We are convinced that a thoroughly future-oriented mindset is the driving force that brings fresh momentum to this industry."
+    }
+  ],
+  company: { jp: "株式会社コスモホールディングス", en: "Cosmo Holdings Co., Ltd." },
+  role: { jp: "代表取締役", en: "President & CEO" },
+  name: { jp: "貝塚 弘幸", en: "Hiroyuki Kaizuka" }
+};
+
 const recruitTypeCards = [
   {
     id: "career",
@@ -62,7 +86,7 @@ export default function HomePage() {
       <Header />
       <main>
         <section className="hero">
-          <video src="/assets/hero-kv.mp4" autoPlay muted loop style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute' }} />
+          <video src="/assets/kv-video.mp4" autoPlay muted loop style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute' }} />
           {/* <HeroVisual /> */}
           {/* <div className="hero__overlay" /> */}
           <div className="hero__box">
@@ -168,7 +192,7 @@ export default function HomePage() {
 
 
 
-        <ScrollSection className="section section--flow section--flow-people" id="people">
+        {/* <ScrollSection className="section section--flow section--flow-people" id="people">
           <div className="container">
             <Reveal direction="left">
               <SectionIntro
@@ -203,6 +227,33 @@ export default function HomePage() {
                 </Reveal>
               ))}
             </div>
+          </div>
+        </ScrollSection> */}
+
+        <ScrollSection className="section section--flow section--flow-people" id="people">
+          <div className="container message-card">
+            <Reveal direction="down" className="message-card__heading">
+              <p className="eyebrow">MESSAGE</p>
+              <h2>{t(ceoMessage.title)}</h2>
+            </Reveal>
+            <Reveal className="message-card__media" direction="left">
+              <Image
+                src="/assets/top_ceophoto.jpg"
+                alt={t(ceoMessage.name)}
+                fill
+                sizes="(max-width: 1080px) 100vw, 420px"
+              />
+            </Reveal>
+            <Reveal delay={0.1} className="message-card__content" direction="right">
+              {ceoMessage.paragraphs.map((paragraph) => (
+                <p key={paragraph.jp}>{t(paragraph)}</p>
+              ))}
+              <p className="message-card__signature">
+                {t(ceoMessage.company)}
+                <br />
+                {t(ceoMessage.role)} {t(ceoMessage.name)}
+              </p>
+            </Reveal>
           </div>
         </ScrollSection>
 
