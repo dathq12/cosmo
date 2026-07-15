@@ -25,9 +25,37 @@ import {
   uiText
 } from "@/data/site-data";
 
+const recruitTypeCards = [
+  {
+    id: "career",
+    image: "/assets/recruit-job-card-1.png",
+    title: { jp: "キャリア採用", en: "Career Recruitment" },
+    body: {
+      jp: "I-neキャリア採用の募集職種をご紹介します。",
+      en: "Explore the open positions in I-ne's career recruitment."
+    },
+    cta: {
+      jp: "キャリア採用募集要項はこちら",
+      en: "View career recruitment details"
+    }
+  },
+  {
+    id: "new-grad",
+    image: "/assets/recruit-job-card-2.png",
+    title: { jp: "新卒採用", en: "New Graduate Recruitment" },
+    body: {
+      jp: "I-ne新卒採用の募集職種をご紹介します。",
+      en: "Explore the open positions in I-ne's new graduate recruitment."
+    },
+    cta: {
+      jp: "新卒採用募集要項はこちら",
+      en: "View new graduate recruitment details"
+    }
+  }
+];
+
 export default function HomePage() {
   const { t } = useLanguage();
-  const featuredJobs = jobs.slice(0, 2);
 
   return (
     <>
@@ -326,28 +354,63 @@ export default function HomePage() {
             </div>
 
             <div className="recruit-featured-jobs">
-              {featuredJobs.map((job, index) => {
-                const company = companies.find((item) => item.slug === job.company);
-                return (
-                  <article className="recruit-job-card" key={job.id}>
-                    <div className="recruit-job-card__meta">
-                      <span style={{ color: company?.accent }}>{company?.name}</span>
-                      <span>{t(job.location)}</span>
-                      <span>{t(job.type)}</span>
+              {recruitTypeCards.map((card, index) => (
+                <Reveal
+                  key={card.id}
+                  delay={index * 0.08}
+                  direction="up"
+                  className="recruit-job-card"
+                >
+                  <div className="recruit-job-card__media">
+                    <Image
+                      src={card.image}
+                      alt={t(card.title)}
+                      fill
+                      sizes="(max-width: 900px) 100vw, 48vw"
+                    />
+                  </div>
+                  <div className="recruit-job-card__body">
+                    <h3>{t(card.title)}</h3>
+                    <p>{t(card.body)}</p>
+                    <div className="recruit-job-card__cta">
+                      <span className="recruit-job-card__cta-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M5 12h14M13 6l6 6-6 6"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </span>
+                      <span className="recruit-job-card__cta-text">
+                        {t(card.cta)}
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect
+                            x="3"
+                            y="8"
+                            width="12"
+                            height="12"
+                            rx="1.5"
+                            stroke="currentColor"
+                            strokeWidth="1.6"
+                          />
+                          <rect
+                            x="9"
+                            y="4"
+                            width="12"
+                            height="12"
+                            rx="1.5"
+                            stroke="currentColor"
+                            strokeWidth="1.6"
+                          />
+                        </svg>
+                      </span>
                     </div>
-                    <h3>{t(job.title)}</h3>
-                    <p>{t(job.mission)}</p>
-                    <ul>
-                      {job.tasks.slice(0, 2).map((task, taskIndex) => (
-                        <li key={`${job.id}-featured-task-${taskIndex}`}>{t(task)}</li>
-                      ))}
-                    </ul>
-                    {/* <span className="recruit-job-card__index">
-                      {String(index + 1).padStart(2, "0")}
-                    </span> */}
-                  </article>
-                );
-              })}
+                  </div>
+                </Reveal>
+              ))}
             </div>
           </Reveal>
         </ScrollSection>
