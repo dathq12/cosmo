@@ -5,7 +5,7 @@ import Image from "next/image";
 import { CompanyFit } from "@/components/CompanyFit";
 import { CompanyGroupShowcase } from "@/components/CompanyGroupShowcase";
 import { CompanyNetworkDiagram } from "@/components/CompanyNetworkDiagram";
-import { FaqAccordion } from "@/components/FaqAccordion";
+import { FaqAccordion } from "@/components/FaqAccordion"; 
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { HeroVisual } from "@/components/HeroVisual";
