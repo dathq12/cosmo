@@ -53,8 +53,8 @@ const ceoMessage = {
 
 const workEnv = {
   title: {
-    jp: "心地よく働き、\n自分らしく成長する。",
-    en: "Work comfortably.\nGrow in your own way."
+    jp: "心地よく働き、自分らしく成長する。",
+    en: "Work comfortably. Grow in your own way."
   },
   body: {
     jp: "一人ひとりが安心して挑戦を続けられるように。COSMOでは、働く場所・制度・チームのすべてから、成長を支える環境を整えています。",
@@ -337,9 +337,6 @@ export default function HomePage() {
                 <p className="eyebrow">WORK ENVIRONMENT</p>
                 <h2>{t(workEnv.title)}</h2>
                 <p>{t(workEnv.body)}</p>
-                <a href="#" className="work-env__side" aria-hidden="true">
-                  {workEnv.sideLabel}
-                </a>
               </Reveal>
               <Reveal direction="right" delay={0.1} className="work-env__banner">
                 <Image
