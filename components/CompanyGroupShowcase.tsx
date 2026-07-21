@@ -482,9 +482,11 @@ export function CompanyGroupShowcase() {
       </svg>
     </div>
     <Reveal direction="up" delay={0.4} className="group-showcase__all-link-wrap">
-      <a href="#" className="button group-showcase__all-link">
-        {t(groupShowcaseText.link)}
-        <span aria-hidden="true">→</span>
+      <a href="#" className="button button--secondary">
+        <span>{t(groupShowcaseText.link)}</span>
+        <span aria-hidden="true" className="button__arrow">
+          →
+        </span>
       </a>
     </Reveal>
     </>

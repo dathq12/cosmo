@@ -107,8 +107,8 @@ const recruitTypeCards = [
     image: "/assets/recruit-job-card-1.png",
     title: { jp: "キャリア採用", en: "Career Recruitment" },
     body: {
-      jp: "I-neキャリア採用の募集職種をご紹介します。",
-      en: "Explore the open positions in I-ne's career recruitment."
+      jp: "コスモグループキャリア採用の募集職種をご紹介します。",
+      en: "Explore the open positions in COSMO Group's career recruitment."
     },
     cta: {
       jp: "キャリア採用募集要項はこちら",
@@ -120,8 +120,8 @@ const recruitTypeCards = [
     image: "/assets/recruit-job-card-2.png",
     title: { jp: "新卒採用", en: "New Graduate Recruitment" },
     body: {
-      jp: "I-ne新卒採用の募集職種をご紹介します。",
-      en: "Explore the open positions in I-ne's new graduate recruitment."
+      jp: "コスモグループ新卒採用の募集職種をご紹介します。",
+      en: "Explore the open positions in COSMO Group's new graduate recruitment."
     },
     cta: {
       jp: "新卒採用募集要項はこちら",
