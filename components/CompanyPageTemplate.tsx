@@ -4,15 +4,17 @@ import Image from "next/image";
 import Link from "next/link";
 
 import type { Company } from "@/data/site-data";
-import { interviews, jobs, uiText } from "@/data/site-data";
+import { interviews, jobs, offices, uiText } from "@/data/site-data";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { useLanguage } from "@/components/ui/LanguageProvider";
+import { AddressIcon, FaxIcon, NavigationIcon, PhoneIcon } from "@/components/ui/OfficeIcons";
 import { Reveal } from "@/components/ui/Reveal";
 import { ScrollSection } from "@/components/ui/ScrollSection";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 
 export function CompanyPageTemplate({ company }: { company: Company }) {
   const companyJobs = jobs.filter((job) => job.company === company.slug);
+  const companyOffices = offices.filter((office) => office.company === company.slug);
   const companyInterviews = interviews.filter(
     (interview) => interview.company === company.slug
   );
@@ -107,7 +109,7 @@ export function CompanyPageTemplate({ company }: { company: Company }) {
               <article key={job.id} className="job-card">
                 <div className="job-card__meta">
                   <span style={{ color: company.accent }}>{company.name}</span>
-                  <span>{t(job.location)}</span>
+                  <span>{job.locations.map((location) => t(location)).join(" / ")}</span>
                   <span>{t(job.type)}</span>
                 </div>
                 <h3>{t(job.title)}</h3>
@@ -122,6 +124,52 @@ export function CompanyPageTemplate({ company }: { company: Company }) {
           </div>
           <div className="section-cta">
             <Link href="/jobs">{t(uiText.common.listPage)}</Link>
+          </div>
+        </div>
+      </ScrollSection>
+
+      <ScrollSection className="section section--warm">
+        <div className="container">
+          <SectionIntro
+            label="OFFICES"
+            title={t(uiText.companyPage.officesTitle)}
+            body={t(uiText.companyPage.officesBody)}
+          />
+          <div className="office-list">
+            {companyOffices.map((office) => {
+              const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(office.address)}`;
+              return (
+                <div key={office.id} className="office-row">
+                  <div className="office-row__head">
+                    <span className="office-row__tag">{t(office.area)}</span>
+                    <h3 className="office-row__name">{t(office.name)}</h3>
+                  </div>
+                  <div className="office-row__details">
+                    <span className="office-row__detail">
+                      <AddressIcon className="office-row__icon" />
+                      {office.zip ? `〒${office.zip} ` : ""}
+                      {office.address}
+                    </span>
+                    {office.tel && (
+                      <span className="office-row__detail">
+                        <PhoneIcon className="office-row__icon" />
+                        {office.tel}
+                      </span>
+                    )}
+                    {office.fax && (
+                      <span className="office-row__detail">
+                        <FaxIcon className="office-row__icon" />
+                        {office.fax}
+                      </span>
+                    )}
+                  </div>
+                  <a className="office-row__map" href={mapUrl} target="_blank" rel="noreferrer">
+                    <NavigationIcon className="office-row__icon" />
+                    MAP
+                  </a>
+                </div>
+              );
+            })}
           </div>
         </div>
       </ScrollSection>

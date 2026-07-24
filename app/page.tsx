@@ -519,7 +519,7 @@ export default function HomePage() {
                   >
                     <div className="job-card__meta">
                       <span style={{ color: company?.accent }}>{company?.name}</span>
-                      <span>{t(job.location)}</span>
+                      <span>{job.locations.map((location) => t(location)).join(" / ")}</span>
                       <span>{t(job.type)}</span>
                     </div>
                     <h3>{t(job.title)}</h3>

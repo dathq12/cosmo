@@ -12,7 +12,7 @@ export type Company = {
   name: string;
   label: LocalizedText;
   englishTag: string;
-  accent: string;
+  accent?: string;
   softAccent: string;
   tagline: LocalizedText;
   summary: LocalizedText;
@@ -25,15 +25,27 @@ export type Company = {
   portrait: string;
 };
 
+
 export type Job = {
   id: string;
   title: LocalizedText;
   company: CompanySlug;
-  location: LocalizedText;
+  locations: LocalizedText[];
   type: LocalizedText;
   mission: LocalizedText;
   tasks: LocalizedText[];
   fit: LocalizedText;
+};
+
+export type Office = {
+  id: string;
+  company: CompanySlug;
+  name: LocalizedText;
+  area: LocalizedText;
+  zip?: string;
+  address: string;
+  tel?: string;
+  fax?: string;
 };
 
 export type Interview = {
@@ -44,6 +56,21 @@ export type Interview = {
   quote: LocalizedText;
   image: string;
 };
+
+export const areas: LocalizedText[] = [
+  { jp: "福岡", en: "Fukuoka" },
+  { jp: "長崎", en: "Nagasaki" },
+  { jp: "熊本", en: "Kumamoto" },
+  { jp: "大分", en: "Oita" },
+  { jp: "鹿児島", en: "Kagoshima" },
+  { jp: "広島", en: "Hiroshima" },
+  { jp: "大阪", en: "Osaka" },
+  { jp: "新潟", en: "Niigata" },
+  { jp: "富山", en: "Toyama" },
+  { jp: "石川", en: "Ishikawa" },
+  { jp: "長野", en: "Nagano" },
+  { jp: "東京", en: "Tokyo" }
+];
 
 export const navItems = [
   { label: { jp: "会社を知る", en: "ABOUT" }, href: "/#about" },
@@ -89,6 +116,11 @@ export const uiText = {
     positionsBody: {
       jp: "仕事内容だけでなく、どんな価値観や志向性が活きるかまで見える一覧です。",
       en: "This list shows not only the work itself, but also the values and mindset that fit each role."
+    },
+    officesTitle: { jp: "拠点情報", en: "Office Locations" },
+    officesBody: {
+      jp: "全国・海外の拠点一覧です。最寄りの拠点にお問い合わせください。",
+      en: "A list of offices across Japan and overseas. Contact your nearest location for details."
     }
   },
   jobsPage: {
@@ -282,7 +314,6 @@ export const companies: Company[] = [
     name: "COSMO",
     label: { jp: "株式会社コスモ", en: "Cosmo Co., Ltd." },
     englishTag: "Salon Partner",
-    accent: "#fff",
     softAccent: "rgba(216, 136, 112, 0.14)",
     tagline: {
       jp: "美容室のいちばん近くで、成長を支える。",
@@ -323,7 +354,6 @@ export const companies: Company[] = [
     name: "CREATE",
     label: { jp: "株式会社CREATE", en: "CREATE Co., Ltd." },
     englishTag: "Product Engineering",
-    accent: "#fff",
     softAccent: "rgba(79, 103, 136, 0.14)",
     tagline: {
       jp: "美しさを、技術でかたちにする。",
@@ -364,7 +394,6 @@ export const companies: Company[] = [
     name: "HOLISTIC CURES",
     label: { jp: "ホリスティックキュアーズ", en: "Holistic Cures" },
     englishTag: "Premium Devices",
-    accent: "#3397AB",
     softAccent: "rgba(178, 142, 109, 0.16)",
     tagline: {
       jp: "品質と感性で、毎日の美しさを磨く。",
@@ -407,7 +436,20 @@ export const jobs: Job[] = [
     id: "cosmo-sales",
     title: { jp: "営業 / サロンコンサルティング", en: "Sales / Salon Consulting" },
     company: "cosmo",
-    location: { jp: "福岡", en: "Fukuoka" },
+    locations: [
+      { jp: "福岡", en: "Fukuoka" },
+      { jp: "長崎", en: "Nagasaki" },
+      { jp: "熊本", en: "Kumamoto" },
+      { jp: "大分", en: "Oita" },
+      { jp: "鹿児島", en: "Kagoshima" },
+      { jp: "広島", en: "Hiroshima" },
+      { jp: "大阪", en: "Osaka" },
+      { jp: "新潟", en: "Niigata" },
+      { jp: "富山", en: "Toyama" },
+      { jp: "石川", en: "Ishikawa" },
+      { jp: "長野", en: "Nagano" },
+      { jp: "東京", en: "Tokyo" }
+    ],
     type: { jp: "中途・正社員", en: "Mid-career / Full-time" },
     mission: {
       jp: "美容室の経営課題に向き合い、継続的な成長支援を行う。",
@@ -427,7 +469,11 @@ export const jobs: Job[] = [
     id: "create-mechanical",
     title: { jp: "機構設計 / プロダクト開発", en: "Mechanical Design / Product Development" },
     company: "create",
-    location: { jp: "福岡", en: "Fukuoka" },
+    locations: [
+      { jp: "福岡", en: "Fukuoka" },
+      { jp: "東京", en: "Tokyo" },
+      { jp: "大阪", en: "Osaka" }
+    ],
     type: { jp: "中途・正社員", en: "Mid-career / Full-time" },
     mission: {
       jp: "美容デバイスの設計品質と使い心地を高める。",
@@ -447,7 +493,7 @@ export const jobs: Job[] = [
     id: "holistic-qa",
     title: { jp: "品質管理 / 品質保証", en: "Quality Control / Quality Assurance" },
     company: "holistic-cures",
-    location: { jp: "福岡", en: "Fukuoka" },
+    locations: [{ jp: "福岡", en: "Fukuoka" }],
     type: { jp: "中途・正社員", en: "Mid-career / Full-time" },
     mission: {
       jp: "ブランド品質を守り、長く愛される製品体験を支える。",
@@ -467,7 +513,10 @@ export const jobs: Job[] = [
     id: "group-corporate",
     title: { jp: "コーポレート / 経営管理", en: "Corporate / Business Management" },
     company: "cosmo",
-    location: { jp: "福岡", en: "Fukuoka" },
+    locations: [
+      { jp: "福岡", en: "Fukuoka" },
+      { jp: "東京", en: "Tokyo" }
+    ],
     type: { jp: "中途・正社員", en: "Mid-career / Full-time" },
     mission: {
       jp: "グループ全体の挑戦を支える仕組みを整える。",
@@ -482,6 +531,366 @@ export const jobs: Job[] = [
       jp: "人と組織の成長を仕組みで支えたい方",
       en: "For people who want to support growth in people and organizations through systems."
     }
+  },
+  {
+    id: "create-qa-engineer",
+    title: { jp: "品質評価エンジニア / QAエンジニア", en: "Quality Evaluation Engineer / QA Engineer" },
+    company: "create",
+    locations: [
+      { jp: "長崎", en: "Nagasaki" },
+      { jp: "熊本", en: "Kumamoto" },
+      { jp: "広島", en: "Hiroshima" }
+    ],
+    type: { jp: "中途・正社員", en: "Mid-career / Full-time" },
+    mission: {
+      jp: "エリア拠点に密着し、製品の評価精度と現場対応力を高める。",
+      en: "Stay close to regional sites to raise evaluation accuracy and on-site responsiveness."
+    },
+    tasks: [
+      { jp: "評価試験の実施と記録", en: "Run and document evaluation tests" },
+      { jp: "現場からの品質フィードバック収集", en: "Collect quality feedback from the field" },
+      { jp: "改善提案の設計チームへの共有", en: "Share improvement proposals with the design team" }
+    ],
+    fit: {
+      jp: "現場の声を品質改善につなげたい方",
+      en: "For people who want to turn on-the-ground feedback into quality improvements."
+    }
+  },
+  {
+    id: "cosmo-area-manager",
+    title: { jp: "エリアマネージャー / 拠点統括", en: "Area Manager / Regional Operations" },
+    company: "cosmo",
+    locations: [
+      { jp: "熊本", en: "Kumamoto" },
+      { jp: "鹿児島", en: "Kagoshima" },
+      { jp: "広島", en: "Hiroshima" }
+    ],
+    type: { jp: "中途・正社員", en: "Mid-career / Full-time" },
+    mission: {
+      jp: "複数拠点の営業活動を統括し、地域ごとの成長戦略を推進する。",
+      en: "Oversee sales activity across multiple sites and drive regional growth strategy."
+    },
+    tasks: [
+      { jp: "拠点間の営業方針すり合わせ", en: "Align sales policy across sites" },
+      { jp: "拠点スタッフの育成支援", en: "Support the development of site staff" },
+      { jp: "地域別の売上・在庫管理", en: "Manage regional sales and inventory" }
+    ],
+    fit: {
+      jp: "複数拠点をまたいでマネジメントした経験を活かしたい方",
+      en: "For people who want to apply experience managing across multiple sites."
+    }
+  }
+];
+
+export const offices: Office[] = [
+  // 株式会社コスモホールディングス
+  {
+    id: "cosmo-holdings-fukuoka-hq",
+    company: "cosmo",
+    name: { jp: "コスモホールディングス 福岡本社", en: "Cosmo Holdings – Fukuoka HQ" },
+    area: { jp: "福岡", en: "Fukuoka" },
+    zip: "815-0075",
+    address: "福岡県福岡市南区長丘3-23-33",
+    tel: "092-552-5560",
+    fax: "092-552-5570"
+  },
+  {
+    id: "cosmo-holdings-hakata",
+    company: "cosmo",
+    name: { jp: "コスモホールディングス 博多オフィス", en: "Cosmo Holdings – Hakata Office" },
+    area: { jp: "福岡", en: "Fukuoka" },
+    zip: "812-0011",
+    address: "福岡県福岡市博多区博多駅前3丁目30-1 タイセイ第1ビル5F",
+    tel: "092-409-0846",
+    fax: "092-409-0847"
+  },
+  // 株式会社コスモ
+  {
+    id: "cosmo-fukuoka-hq",
+    company: "cosmo",
+    name: { jp: "コスモ 福岡本社", en: "Cosmo – Fukuoka HQ" },
+    area: { jp: "福岡", en: "Fukuoka" },
+    zip: "815-0075",
+    address: "福岡県福岡市南区長丘3-23-33",
+    tel: "092-551-1387",
+    fax: "092-551-7811"
+  },
+  {
+    id: "cosmo-fukuoka-office",
+    company: "cosmo",
+    name: { jp: "コスモ 福岡オフィス", en: "Cosmo – Fukuoka Office" },
+    area: { jp: "福岡", en: "Fukuoka" },
+    zip: "810-0004",
+    address: "福岡県福岡市中央区渡辺通2-7-12 New-Gen minami tenjin 5階",
+    tel: "092-718-0700",
+    fax: "092-718-0703"
+  },
+  {
+    id: "cosmo-kurume",
+    company: "cosmo",
+    name: { jp: "コスモ 久留米オフィス", en: "Cosmo – Kurume Office" },
+    area: { jp: "福岡", en: "Fukuoka" },
+    zip: "839-0841",
+    address: "福岡県久留米市御井旗崎4-4-7",
+    tel: "0942-43-5668",
+    fax: "0942-43-5706"
+  },
+  {
+    id: "cosmo-kitakyushu",
+    company: "cosmo",
+    name: { jp: "コスモ 北九州オフィス", en: "Cosmo – Kitakyushu Office" },
+    area: { jp: "福岡", en: "Fukuoka" },
+    zip: "802-0052",
+    address: "福岡県北九州市小倉北区霧ヶ丘1-10-10",
+    tel: "093-921-5657",
+    fax: "093-921-5931"
+  },
+  {
+    id: "cosmo-nagasaki",
+    company: "cosmo",
+    name: { jp: "コスモ 長崎オフィス", en: "Cosmo – Nagasaki Office" },
+    area: { jp: "長崎", en: "Nagasaki" },
+    zip: "850-0852",
+    address: "長崎県長崎市万屋町2-20 FD bildg 3F 302号室",
+    tel: "095-895-8120",
+    fax: "095-895-8121"
+  },
+  {
+    id: "cosmo-kumamoto",
+    company: "cosmo",
+    name: { jp: "コスモ 熊本オフィス", en: "Cosmo – Kumamoto Office" },
+    area: { jp: "熊本", en: "Kumamoto" },
+    zip: "860-0848",
+    address: "熊本県熊本市中央区南坪井町1-5 サンコスメディオ3F",
+    tel: "096-276-6618",
+    fax: "096-276-6619"
+  },
+  {
+    id: "cosmo-oita",
+    company: "cosmo",
+    name: { jp: "コスモ 大分オフィス", en: "Cosmo – Oita Office" },
+    area: { jp: "大分", en: "Oita" },
+    zip: "870-0026",
+    address: "大分県大分市金池町2-5-11 スリーキャンビル2F",
+    tel: "097-540-5970",
+    fax: "097-540-5971"
+  },
+  {
+    id: "cosmo-kagoshima",
+    company: "cosmo",
+    name: { jp: "コスモ 鹿児島オフィス", en: "Cosmo – Kagoshima Office" },
+    area: { jp: "鹿児島", en: "Kagoshima" },
+    zip: "890-0066",
+    address: "鹿児島県鹿児島市真砂町2-1 あおいビル2F",
+    tel: "099-299-8800",
+    fax: "099-251-6882"
+  },
+  {
+    id: "cosmo-hiroshima",
+    company: "cosmo",
+    name: { jp: "コスモ 広島オフィス", en: "Cosmo – Hiroshima Office" },
+    area: { jp: "広島", en: "Hiroshima" },
+    zip: "730-0029",
+    address: "広島県広島市中区三川町6-7 並木Sビル1001号室",
+    tel: "082-567-5787",
+    fax: "082-567-5788"
+  },
+  {
+    id: "cosmo-tokyo",
+    company: "cosmo",
+    name: { jp: "コスモ 東京オフィス", en: "Cosmo – Tokyo Office" },
+    area: { jp: "東京", en: "Tokyo" },
+    zip: "105-0004",
+    address: "東京都港区新橋6-16-10 御成門BNビル3F",
+    tel: "03-5776-1120",
+    fax: "03-5777-6012"
+  },
+  {
+    id: "cosmo-osaka",
+    company: "cosmo",
+    name: { jp: "コスモ 大阪オフィス", en: "Cosmo – Osaka Office" },
+    area: { jp: "大阪", en: "Osaka" },
+    zip: "530-0012",
+    address: "大阪府大阪市北区芝田1-12-7 大栄ビル新館7F",
+    tel: "06-6225-8241",
+    fax: "06-6225-8272"
+  },
+  {
+    id: "cosmo-niigata",
+    company: "cosmo",
+    name: { jp: "コスモ 新潟オフィス", en: "Cosmo – Niigata Office" },
+    area: { jp: "新潟", en: "Niigata" },
+    zip: "950-0868",
+    address: "新潟県新潟市東区柴竹卸新町1808-34",
+    tel: "025-282-5333",
+    fax: "025-282-5770"
+  },
+  {
+    id: "cosmo-nagaoka",
+    company: "cosmo",
+    name: { jp: "コスモ 長岡オフィス", en: "Cosmo – Nagaoka Office" },
+    area: { jp: "新潟", en: "Niigata" },
+    zip: "940-0034",
+    address: "新潟県長岡市福住2-5-4",
+    tel: "0258-35-2100",
+    fax: "0258-31-1311"
+  },
+  {
+    id: "cosmo-joetsu",
+    company: "cosmo",
+    name: { jp: "コスモ 上越オフィス", en: "Cosmo – Joetsu Office" },
+    area: { jp: "新潟", en: "Niigata" },
+    zip: "943-0807",
+    address: "新潟県上越市春日山町2-11-41",
+    tel: "025-522-8060",
+    fax: "025-522-7154"
+  },
+  {
+    id: "cosmo-toyama",
+    company: "cosmo",
+    name: { jp: "コスモ 富山オフィス", en: "Cosmo – Toyama Office" },
+    area: { jp: "富山", en: "Toyama" },
+    zip: "939-8072",
+    address: "富山県富山市堀川町330 宮内ビルA",
+    tel: "076-491-2902",
+    fax: "076-494-1363"
+  },
+  {
+    id: "cosmo-kanazawa",
+    company: "cosmo",
+    name: { jp: "コスモ 金沢オフィス", en: "Cosmo – Kanazawa Office" },
+    area: { jp: "石川", en: "Ishikawa" },
+    zip: "920-0031",
+    address: "石川県金沢市広岡1-2-14 コーワビル6F",
+    tel: "076-255-3253",
+    fax: "076-255-3254"
+  },
+  {
+    id: "cosmo-nagano",
+    company: "cosmo",
+    name: { jp: "コスモ 長野オフィス", en: "Cosmo – Nagano Office" },
+    area: { jp: "長野", en: "Nagano" },
+    zip: "381-2217",
+    address: "長野県長野市稲里町中央4-17-20",
+    tel: "026-291-0055",
+    fax: "026-291-0058"
+  },
+  {
+    id: "cosmo-distribution-hq",
+    company: "cosmo",
+    name: { jp: "コスモ 流通本部", en: "Cosmo – Distribution HQ" },
+    area: { jp: "福岡", en: "Fukuoka" },
+    zip: "815-0075",
+    address: "福岡県福岡市南区長丘3-25-15",
+    tel: "092-562-0600",
+    fax: "092-562-0601"
+  },
+  {
+    id: "cosmo-distribution-1",
+    company: "cosmo",
+    name: { jp: "コスモ 第1流通センター", en: "Cosmo – Distribution Center 1" },
+    area: { jp: "福岡", en: "Fukuoka" },
+    zip: "815-0075",
+    address: "福岡県福岡市南区長丘3-25-16",
+    tel: "092-551-7781",
+    fax: "092-551-1357"
+  },
+  {
+    id: "cosmo-distribution-2",
+    company: "cosmo",
+    name: { jp: "コスモ 第2流通センター", en: "Cosmo – Distribution Center 2" },
+    area: { jp: "福岡", en: "Fukuoka" },
+    zip: "815-0075",
+    address: "福岡県福岡市南区長丘3-25-11",
+    tel: "092-557-2570",
+    fax: "092-557-2571"
+  },
+  {
+    id: "cosmo-komaki-warehouse",
+    company: "cosmo",
+    name: { jp: "コスモ 小牧倉庫", en: "Cosmo – Komaki Warehouse" },
+    area: { jp: "愛知", en: "Aichi" },
+    address: "愛知県小牧市三ツ渕惣作1350 SGL 小牧SRC12F",
+    tel: "080-9106-3354",
+    fax: "0568-54-8381"
+  },
+  // 株式会社クレイツ
+  {
+    id: "create-fukuoka-hq",
+    company: "create",
+    name: { jp: "クレイツ 福岡本社", en: "Create – Fukuoka HQ" },
+    area: { jp: "福岡", en: "Fukuoka" },
+    zip: "815-0075",
+    address: "福岡県福岡市南区長丘3-23-33",
+    tel: "092-552-5331",
+    fax: "092-552-5924"
+  },
+  {
+    id: "create-tokyo",
+    company: "create",
+    name: { jp: "クレイツ 東京オフィス", en: "Create – Tokyo Office" },
+    area: { jp: "東京", en: "Tokyo" },
+    zip: "105-0004",
+    address: "東京都港区新橋6-16-10 御成門BNビル3F",
+    tel: "03-5777-6011",
+    fax: "03-5777-6012"
+  },
+  {
+    id: "create-osaka",
+    company: "create",
+    name: { jp: "クレイツ 大阪オフィス", en: "Create – Osaka Office" },
+    area: { jp: "大阪", en: "Osaka" },
+    zip: "530-0012",
+    address: "大阪府大阪市北区芝田1-12-7 大栄ビル新館7F",
+    tel: "06-6225-8241",
+    fax: "06-6225-8272"
+  },
+  {
+    id: "create-distribution-1",
+    company: "create",
+    name: { jp: "クレイツ 第1流通センター", en: "Create – Distribution Center 1" },
+    area: { jp: "福岡", en: "Fukuoka" },
+    zip: "815-0075",
+    address: "福岡県福岡市南区長丘3-25-16",
+    tel: "092-551-7781",
+    fax: "092-551-1357"
+  },
+  {
+    id: "create-distribution-2",
+    company: "create",
+    name: { jp: "クレイツ 第2流通センター", en: "Create – Distribution Center 2" },
+    area: { jp: "福岡", en: "Fukuoka" },
+    zip: "815-0075",
+    address: "福岡県福岡市南区長丘3-25-11",
+    tel: "092-557-2570",
+    fax: "092-557-2571"
+  },
+  {
+    id: "create-ion-hongkong",
+    company: "create",
+    name: { jp: "クレイツイオン香港", en: "Create Ion Hong Kong" },
+    area: { jp: "香港", en: "Hong Kong" },
+    address: "Unit5, 19th Floor, Clifford Centre, No.782 Cheung Sha Wan Road, Kowloon, Hong Kong",
+    tel: "+852 2371-3783",
+    fax: "+852 2371-3789"
+  },
+  {
+    id: "create-ion-usa",
+    company: "create",
+    name: { jp: "クレイツイオンUSA", en: "Create Ion USA" },
+    area: { jp: "アメリカ", en: "USA" },
+    address: "1055E. Colorado Blvd., Suite 500, Pasadena, CA 91106 USA",
+    tel: "+1-626 798-4247",
+    fax: "+1-626 798-4244"
+  },
+  {
+    id: "create-ion-korea",
+    company: "create",
+    name: { jp: "クレイツイオンKOREA", en: "Create Ion Korea" },
+    area: { jp: "韓国", en: "Korea" },
+    address: "Ganabesttown 512., 544-4 Sang-dong, Wonmi-Gu, Bucheon city, Gyeonggi-do, Korea",
+    tel: "+82-32-324-9221",
+    fax: "+82-32-324-9336"
   }
 ];
 
